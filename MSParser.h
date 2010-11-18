@@ -18,6 +18,8 @@
 
 @property (nonatomic, retain) MSNode *root;
 
+- (id) initWithParseText:(NSString*)text;
+
 - (void)addNode:(MSNode*)node;
 - (void)parseURLs:(NSString*)string;
 

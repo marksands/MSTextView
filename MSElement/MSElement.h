@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MSElement : NSObject {
-
+  UIFont *font;
 }
 
 @end

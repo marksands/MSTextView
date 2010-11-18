@@ -13,8 +13,8 @@
   MSNode *_child;
 }
 
-@property (nonatomic, assign) MSNode* parent;
-@property (nonatomic, retain) MSNode* child;
+@property (nonatomic, assign) MSNode *parent;
+@property (nonatomic, retain) MSNode *child;
 
 - (id)initWithChild:(MSNode*)childNode;
 

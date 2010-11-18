@@ -12,7 +12,7 @@
   NSString *_Text;
 }
 
-@property (nonatomic, retain) NSString* Text;
+@property (nonatomic, retain) NSString *Text;
 
 - (id) initWithText:(NSString*)text;
 - (id) initWithText:(NSString*)text next:(MSNode*)nextNode;
