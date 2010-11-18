@@ -1,0 +1,8 @@
+.DS_Store
+*.swp
+*~.nib
+
+build/
+
+*.mode2v3
+*.mode1v315
