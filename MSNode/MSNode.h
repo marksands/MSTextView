@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface MSNode : NSObject {
   MSNode *_parent;
   MSNode *_child;

@@ -1,30 +1,29 @@
 //
-//  MSTextNode.m
+//  MSLinkNode.m
 //  UITextViewLinkOptions
 //
 //  Created by Mark Sands on 11/18/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "MSTextNode.h"
+#import "MSLinkNode.h"
 
+@implementation MSLinkNode
 
-@implementation MSTextNode
+@synthesize URL = _URL;
 
-@synthesize Text = _Text;
-
-- (id) initWithText:(NSString *)text
+- (id) initWithURL:(NSString *)url
 {
-  if ( (self = [self initWithText:text next:nil]) ){
+  if ( (self = [self initWithURL:url next:nil]) ){
   }
   
   return self;
 }
 
-- (id) initWithText:(NSString*)text next:(MSNode*)nextNode
+- (id) initWithURL:(NSString*)url next:(MSNode*)nextNode
 {
   if ( (self = [super init]) ){
-    self.Text = text;
+    self.URL = url;
     self.child = nextNode;
   }
   
@@ -32,12 +31,12 @@
 }
 
 - (NSString*)description {
-  return self.Text; 
+  return self.URL; 
 }
 
 - (void) dealloc
 {
-  [_Text release];
+  [_URL release];
   [super dealloc];
 }
 

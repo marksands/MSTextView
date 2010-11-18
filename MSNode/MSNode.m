@@ -8,7 +8,6 @@
 
 #import "MSNode.h"
 
-
 @implementation MSNode
 
 @synthesize parent = _parent;;

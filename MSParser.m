@@ -84,14 +84,14 @@
 - (void) dealloc
 {
   
-  NSLog(@"root: %@", [self.root description]);
+  NSLog(@"root: %@", _root);
   
-  MSNode *node = self.root;
+  MSNode *node = _root;
   while (node != nil) {
-    NSLog(@"%@",[node description]);
+    NSLog(@"%@",node);
     node = node.child;
   }
-  NSLog(@"tail: %@", [_tail description]);
+  NSLog(@"tail: %@", _tail);
   
   [_root release];
   [super dealloc];
