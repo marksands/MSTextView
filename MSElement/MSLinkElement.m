@@ -11,10 +11,13 @@
 
 #define kHighlightColor [UIColor colorWithRed:0.2 green:0.4 blue:0.8 alpha:0.10] 
 
+#define kScreenViewFrame CGRectMake(self.bounds.origin.x-1, self.bounds.origin.y-2, self.bounds.size.width+2, self.bounds.size.height+4)
+
 @implementation MSLinkElement
 
 @synthesize URL = _URL;
 @synthesize delegate;
+@synthesize _screenView;
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -68,24 +71,22 @@
 - (void)setHighlighted:(BOOL)highlighted
 {
   [super setHighlighted:highlighted];
-  
-  static UIView* _screenView;
-  
+
   if (highlighted) {
     if (!_screenView) {
-      _screenView = [[UIView alloc] initWithFrame:self.bounds];
+      _screenView = [[UIView alloc] initWithFrame:kScreenViewFrame];
       _screenView.backgroundColor = kHighlightColor;
       _screenView.userInteractionEnabled = NO;
       
       CALayer *round = [_screenView layer];
       round.masksToBounds = YES;
-      round.cornerRadius = 3.0;
+      round.cornerRadius = 2.0;
       round.borderWidth = 0.0;
       
       [self addSubview:_screenView];
     }
 
-    _screenView.frame = self.bounds;
+    _screenView.frame = kScreenViewFrame;
     _screenView.hidden = NO;
     
   } else {
@@ -112,6 +113,12 @@
 - (void) dealloc
 {
   [_URL release];
+
+  if (_screenView) {
+    [_screenView release];
+    _screenView = nil;
+  }
+
   [super dealloc];
 }
 
