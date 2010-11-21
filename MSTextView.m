@@ -13,6 +13,8 @@
 
 #import "MSParser.h"
 
+#define kLinkColor [UIColor colorWithRed:0.1 green:0.1 blue:1 alpha:1] 
+
 @implementation MSTextView
 
 @synthesize text   = _text;
@@ -24,11 +26,10 @@
 {
   if ( (self=[super initWithFrame:frame]) ) {
     _text = [text retain];
-    
-    _Parser = [[MSParser alloc] initWithParseText:_text];
+    _Parser = [[MSParser alloc] initWithParseText:_text];    
 
+    // clear by default, the user can change at his/her request
     self.backgroundColor = [UIColor clearColor];
-    
   }
 
   return self;
@@ -65,7 +66,7 @@
     else if ([cur isKindOfClass:[MSLinkNode class]]) {
       lbl.text = [(MSLinkNode*)cur URL];
       lbl.font = [UIFont boldSystemFontOfSize:16.0];
-      lbl.textColor = [UIColor blueColor];
+      lbl.textColor = kLinkColor;
 
       lbl.frame = CGRectMake(self.bounds.origin.x, i, [self sizeOfWidthFromBoldText:lbl.text], [self sizeOfHeightFromBoldText:lbl.text]);
       [self addSubview:lbl];

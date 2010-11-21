@@ -9,6 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MSLinkElement.h"
 
+#define kHighlightColor [UIColor colorWithRed:0.2 green:0.4 blue:0.8 alpha:0.10] 
+
 @implementation MSLinkElement
 
 @synthesize URL = _URL;
@@ -72,12 +74,12 @@
   if (highlighted) {
     if (!_screenView) {
       _screenView = [[UIView alloc] initWithFrame:self.bounds];
-      _screenView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.20];
+      _screenView.backgroundColor = kHighlightColor;
       _screenView.userInteractionEnabled = NO;
       
       CALayer *round = [_screenView layer];
       round.masksToBounds = YES;
-      round.cornerRadius = 6.0;
+      round.cornerRadius = 3.0;
       round.borderWidth = 0.0;
       
       [self addSubview:_screenView];
