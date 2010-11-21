@@ -17,7 +17,6 @@
 @implementation MSTextView
 
 @synthesize text   = _text;
-@synthesize Frame  = _Frame;
 @synthesize Parser = _Parser;
 
 @synthesize delegate;
@@ -28,10 +27,8 @@
     _text = [text retain];
     
     _Parser = [[MSParser alloc] initWithParseText:_text];
-    
-    _Frame  = [[MSFrame alloc] initWithRootNode:_Parser.root];    
-    
-    //self.backgroundColor = [UIColor clearColor];
+
+    self.backgroundColor = [UIColor clearColor];
     
   }
 
@@ -48,21 +45,20 @@
 
 - (void) layoutSubviews
 {
-  int i = 240;
+  int i = self.bounds.origin.y;
   MSNode *cur = _Parser.root;
-  
+
   while ( cur != nil )  
   {
-    UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(160, i, 320, 28)];
+    UILabel *lbl = [[UILabel alloc] init];
     lbl.backgroundColor = [UIColor clearColor];
 
     if ([cur isKindOfClass:[MSTextNode class]]) {
       lbl.text = [(MSTextNode*)cur Text];
       lbl.font = [UIFont systemFontOfSize:16.0];
       lbl.textColor = [UIColor blackColor];
-      
-      lbl.frame = CGRectMake(160, i, 300, [self sizeOfHeightFromText:lbl.text]);
 
+      lbl.frame = CGRectMake(self.bounds.origin.x, i, 300, [self sizeOfHeightFromText:lbl.text]);
       [self addSubview:lbl];
 
       i += [self sizeOfHeightFromText:lbl.text];
@@ -72,8 +68,7 @@
       lbl.font = [UIFont boldSystemFontOfSize:16.0];
       lbl.textColor = [UIColor blueColor];
 
-      lbl.frame = CGRectMake(160, i, 300, [self sizeOfHeightFromBoldText:lbl.text]);
-      [lbl sizeToFit];
+      lbl.frame = CGRectMake(self.bounds.origin.x, i, 300, [self sizeOfHeightFromBoldText:lbl.text]);
       [self addSubview:lbl];
       
       i += [self sizeOfHeightFromBoldText:lbl.text];
@@ -108,65 +103,14 @@
   return size.height;
 }
 
+#pragma mark -
+#pragma mark Delegate
+
 - (void) linkTouched:(NSString*)url
-{
-  NSLog(@"middle link: %@",url);
-  
+{  
   if ([(NSObject*)self.delegate respondsToSelector:@selector(linkTouched:)]) {
     [self.delegate linkTouched:url];
   }
-}
-
-#pragma mark -
-#pragma mark UIResponder
-
-- (void)touchesBegan:(NSSet*)touches withEvent:(UIEvent*)event
-{
-  //UITouch* touch = [touches anyObject];
-  //CGPoint point = [touch locationInView:self];
-
-  //UIView *hitView = [super hitTest:point withEvent:event];
-  //return (hitView == self) ? nil : hitView;
-
-  /*
-  MSFrame *frame = [_text hitTest:point];
-  if (frame) {
-    [self setHighlightedFrame:frame];
-  }
-  */
-  
-  /*
-  BOOL inButton = [theButton pointInside:[self convertPoint:point toView:theButton] withEvent:nil];
-	
-	if(inButton) {
-		UIView *theButtonView = [theButton hitTest:[self convertPoint:point toView:theButton] withEvent:event];
-		return theButtonView;
-	}
-	else {
-		return [super hitTest:point withEvent:event];
-	}
-  */
-
-  
-  [super touchesBegan:touches withEvent:event];
-}
-
-- (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event {
-  [super touchesMoved:touches withEvent:event];
-}
-
-- (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event
-{
-  /*
-  if ([_highlightedNode isKindOfClass:[TTStyledLinkNode class]]) {
-    TTOpenURL([(TTStyledLinkNode*)_highlightedNode URL]);
-  */
-  
-  [super touchesEnded:touches withEvent:event];
-}
-
-- (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
-  [super touchesCancelled:touches withEvent:event];
 }
 
 #pragma mark -
@@ -184,7 +128,6 @@
 #pragma mark -
 
 - (void) dealloc {
-  [_Frame release];
   [_Parser release];
   [super dealloc];
 }

@@ -24,7 +24,6 @@
 @interface MSTextView : UIView <MSLinkDelegate> {
   NSString *_text;
   
-  MSFrame  *_Frame;
   MSParser *_Parser;
   
   MSNode *_first;
@@ -36,7 +35,6 @@
 @property (nonatomic, assign) id<MSTextViewDelegate> delegate;
 @property (nonatomic, assign) NSString *text;
 
-@property (nonatomic, retain) MSFrame  *Frame;
 @property (nonatomic, retain) MSParser *Parser;
 
 - (id) initWithText:(NSString*)text andFrame:(CGRect)frame;

@@ -40,8 +40,6 @@
 
 - (void)linkTouched
 {
-  NSLog(@"bottom link: %@",self.URL);
-
   if ([(NSObject*)self.delegate respondsToSelector:@selector(linkTouched:)]) {
     [self.delegate linkTouched:self.URL];
   }
