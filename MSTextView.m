@@ -43,9 +43,16 @@
 #pragma mark -
 #pragma mark UILabel
 
+// need curY to update globally where the y coordinate is at on each line
+// the localHeight will tell us how high the line should be. sizeOfHeightFromText or sizeOfHeightFromBoldText. needs to reset on newline.
+// curX will tell us where we are relative to self.bounds curX makes sure the sum of all nodes on the current line is < self.bounds.size.width
+
 - (void) layoutSubviews
 {
-  int i = self.bounds.origin.y;
+  CGFloat curY = self.bounds.origin.y;
+  CGFloat curX = self.bounds.origin.x;
+  CGFloat localHeight = curY;
+
   MSNode *cur = _Parser.root;
 
   while ( cur != nil )  
@@ -58,20 +65,40 @@
       lbl.font = [UIFont systemFontOfSize:16.0];
       lbl.textColor = [UIColor blackColor];
 
-      lbl.frame = CGRectMake(self.bounds.origin.x, i, [self sizeOfWidthFromText:lbl.text], [self sizeOfHeightFromText:lbl.text]);
-      [self addSubview:lbl];
+      CGFloat tempSum = curX + [self sizeOfWidthFromText:lbl.text];
+      if ([self nodesExceedFrameWidthForSum:tempSum]) {
+        curY += localHeight;
+        localHeight = [self sizeOfHeightFromText:lbl.text];
+        curX = self.bounds.origin.x;
+      }
+      else {
+        localHeight = (localHeight < [self sizeOfHeightFromText:lbl.text]) ? [self sizeOfHeightFromText:lbl.text] : localHeight;
+      }
 
-      i += [self sizeOfHeightFromText:lbl.text];
+      lbl.frame = CGRectMake(curX, curY, [self sizeOfWidthFromText:lbl.text], [self sizeOfHeightFromText:lbl.text]);
+      curX += [self sizeOfWidthFromText:lbl.text];
+
+      [self addSubview:lbl];
     }
     else if ([cur isKindOfClass:[MSLinkNode class]]) {
       lbl.text = [(MSLinkNode*)cur URL];
       lbl.font = [UIFont boldSystemFontOfSize:16.0];
       lbl.textColor = kLinkColor;
 
-      lbl.frame = CGRectMake(self.bounds.origin.x, i, [self sizeOfWidthFromBoldText:lbl.text], [self sizeOfHeightFromBoldText:lbl.text]);
-      [self addSubview:lbl];
+      CGFloat tempSum = curX + [self sizeOfWidthFromBoldText:lbl.text];
+      if ([self nodesExceedFrameWidthForSum:tempSum]) {
+        curY += localHeight;
+        localHeight = [self sizeOfHeightFromBoldText:lbl.text];
+        curX = self.bounds.origin.x;
+      }
+      else {
+        localHeight = (localHeight < [self sizeOfHeightFromBoldText:lbl.text]) ? [self sizeOfHeightFromBoldText:lbl.text] : localHeight;
+      }
+      
+      lbl.frame = CGRectMake(curX, curY, [self sizeOfWidthFromBoldText:lbl.text], [self sizeOfHeightFromBoldText:lbl.text]);
+      curX += [self sizeOfWidthFromBoldText:lbl.text];
 
-      i += [self sizeOfHeightFromBoldText:lbl.text];
+      [self addSubview:lbl];
 
       MSLinkElement *el = [[MSLinkElement alloc] initWithFrame:lbl.frame andURL:lbl.text];
       el.delegate = self;
@@ -93,7 +120,7 @@
   CGSize size = [theText sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
   return size.height;
 }
-                
+
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
 {
   UIFont *font = [UIFont boldSystemFontOfSize:16.0];
@@ -117,6 +144,13 @@
   CGSize sizeToMakeLabel = [theText sizeWithFont:font]; 
   
   return sizeToMakeLabel.width;
+}
+
+- (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum
+{
+  if (sum >= self.bounds.size.width)
+    return YES;
+  return NO;
 }
 
 

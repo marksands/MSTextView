@@ -45,4 +45,6 @@
 - (CGFloat)sizeOfWidthFromText:(NSString*)theText;
 - (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText;
 
+- (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum;
+
 @end
