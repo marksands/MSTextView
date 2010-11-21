@@ -123,10 +123,10 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void) linkTouched:(NSString*)url
+- (void) handleURL:(NSString*)url
 {  
-  if ([(NSObject*)self.delegate respondsToSelector:@selector(linkTouched:)]) {
-    [self.delegate linkTouched:url];
+  if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
+    [self.delegate handleURL:url];
   }
 }
 

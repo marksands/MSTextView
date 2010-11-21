@@ -20,7 +20,7 @@
 {
   if ( (self = [super initWithFrame:frame]) ) {
     [self addTarget:self
-             action:@selector(linkTouched:) 
+             action:@selector(handleURL:) 
    forControlEvents:UIControlEventTouchUpInside];
   }
 
@@ -40,10 +40,10 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void)linkTouched
+- (void)handleURL
 {
-  if ([(NSObject*)self.delegate respondsToSelector:@selector(linkTouched:)]) {
-    [self.delegate linkTouched:self.URL];
+  if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
+    [self.delegate handleURL:self.URL];
   }
 }
 
@@ -61,7 +61,7 @@
   
   UITouch *touch = [touches anyObject];
   if ([self pointInside:[touch locationInView:self] withEvent:event]) {
-    [self linkTouched];
+    [self handleURL];
   }
 }
 

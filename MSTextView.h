@@ -17,7 +17,7 @@
 @class MSParser;
 
 @protocol MSTextViewDelegate
-- (void) linkTouched:(NSString*)url;
+- (void) handleURL:(NSString*)url;
 @end
 
 

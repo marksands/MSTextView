@@ -9,7 +9,7 @@
 #import "MSElement.h"
 
 @protocol MSLinkDelegate
-- (void) linkTouched:(NSString*)url;
+- (void) handleURL:(NSString*)url;
 @end
 
 @interface MSLinkElement : MSElement {
@@ -22,6 +22,6 @@
 @property (nonatomic, retain) NSString *URL;
 
 - (id) initWithFrame:(CGRect)frame andURL:(NSString*)URL;
-- (void)linkTouched;
+- (void)handleURL;
 
 @end
