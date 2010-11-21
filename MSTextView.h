@@ -42,4 +42,7 @@
 - (CGFloat)sizeOfHeightFromText:(NSString*)theText;
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText;
 
+- (CGFloat)sizeOfWidthFromText:(NSString*)theText;
+- (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText;
+
 @end

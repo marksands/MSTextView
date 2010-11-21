@@ -80,10 +80,9 @@
       round.cornerRadius = 6.0;
       round.borderWidth = 0.0;
       
-      
       [self addSubview:_screenView];
     }
-    
+
     _screenView.frame = self.bounds;
     _screenView.hidden = NO;
     

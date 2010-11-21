@@ -11,7 +11,6 @@
 #import "MSTextNode.h"
 #import "MSLinkNode.h"
 
-#import "MSFrame.h"
 #import "MSParser.h"
 
 @implementation MSTextView
@@ -58,7 +57,7 @@
       lbl.font = [UIFont systemFontOfSize:16.0];
       lbl.textColor = [UIColor blackColor];
 
-      lbl.frame = CGRectMake(self.bounds.origin.x, i, 300, [self sizeOfHeightFromText:lbl.text]);
+      lbl.frame = CGRectMake(self.bounds.origin.x, i, [self sizeOfWidthFromText:lbl.text], [self sizeOfHeightFromText:lbl.text]);
       [self addSubview:lbl];
 
       i += [self sizeOfHeightFromText:lbl.text];
@@ -68,9 +67,9 @@
       lbl.font = [UIFont boldSystemFontOfSize:16.0];
       lbl.textColor = [UIColor blueColor];
 
-      lbl.frame = CGRectMake(self.bounds.origin.x, i, 300, [self sizeOfHeightFromBoldText:lbl.text]);
+      lbl.frame = CGRectMake(self.bounds.origin.x, i, [self sizeOfWidthFromBoldText:lbl.text], [self sizeOfHeightFromBoldText:lbl.text]);
       [self addSubview:lbl];
-      
+
       i += [self sizeOfHeightFromBoldText:lbl.text];
 
       MSLinkElement *el = [[MSLinkElement alloc] initWithFrame:lbl.frame andURL:lbl.text];
@@ -93,7 +92,7 @@
   CGSize size = [theText sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
   return size.height;
 }
-                  
+                
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
 {
   UIFont *font = [UIFont boldSystemFontOfSize:16.0];
@@ -102,6 +101,23 @@
   CGSize size = [theText sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
   return size.height;
 }
+
+- (CGFloat)sizeOfWidthFromText:(NSString*)theText
+{
+  UIFont *font = [UIFont systemFontOfSize:16.0];
+  CGSize sizeToMakeLabel = [theText sizeWithFont:font]; 
+  
+  return sizeToMakeLabel.width;
+}
+
+- (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText
+{
+  UIFont *font = [UIFont boldSystemFontOfSize:16.0];
+  CGSize sizeToMakeLabel = [theText sizeWithFont:font]; 
+  
+  return sizeToMakeLabel.width;
+}
+
 
 #pragma mark -
 #pragma mark Delegate
