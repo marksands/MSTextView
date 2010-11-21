@@ -9,7 +9,9 @@
 #import "MSElement.h"
 
 @interface MSTextElement : MSElement {
-
+  NSString *_text;
 }
+
+@property (nonatomic, retain) NSString *text;
 
 @end

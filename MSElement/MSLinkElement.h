@@ -8,8 +8,20 @@
 
 #import "MSElement.h"
 
-@interface MSLinkElement : MSElement {
+@protocol MSLinkDelegate
+- (void) linkTouched:(NSString*)url;
+@end
 
+@interface MSLinkElement : MSElement {
+  NSString *_URL;
+  id<MSLinkDelegate> delegate;
 }
+
+@property (nonatomic, assign) id<MSLinkDelegate> delegate;
+
+@property (nonatomic, retain) NSString *URL;
+
+- (id) initWithFrame:(CGRect)frame andURL:(NSString*)URL;
+- (void)linkTouched;
 
 @end

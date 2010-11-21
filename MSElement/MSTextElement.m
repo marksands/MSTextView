@@ -10,4 +10,25 @@
 
 @implementation MSTextElement
 
+@synthesize text = _text;
+
+- (id) init
+{
+  if ( (self = [super init]) ) {
+    [self addTarget:self
+             action:@selector(linkTouched) 
+   forControlEvents:UIControlEventTouchUpInside];      
+  }
+  
+  return self;
+}
+
+#pragma mark -
+
+- (void) dealloc
+{
+  [_text release];
+  [super dealloc];
+}
+
 @end

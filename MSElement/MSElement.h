@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MSElement : NSObject {
-  UIFont *font;
+@interface MSElement : UIControl {
+  UIFont  *font;
+  UIColor *color;
 }
 
 @end
