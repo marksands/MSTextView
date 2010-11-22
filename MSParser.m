@@ -28,7 +28,7 @@
   if ( (self=[super init]) ) {
     [self parseURLs:text];
   }
-  
+
   return self;
 }
 

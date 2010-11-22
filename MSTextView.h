@@ -23,21 +23,22 @@
 
 @interface MSTextView : UIView <MSLinkDelegate> {
   NSString *_text;
+  UIFont   *_font;
+  UIColor  *_textColor;
   
   MSParser *_Parser;
   
-  MSNode *_first;
-  MSNode *_tail;
-
   id<MSTextViewDelegate> delegate;
 }
 
 @property (nonatomic, assign) id<MSTextViewDelegate> delegate;
-@property (nonatomic, assign) NSString *text;
-
 @property (nonatomic, retain) MSParser *Parser;
 
-- (id) initWithText:(NSString*)text andFrame:(CGRect)frame;
+@property (nonatomic, assign) NSString *text;
+@property (nonatomic, assign) UIFont   *font;
+@property (nonatomic, assign) UIColor  *textColor;
+
+- (id) initWithFrame:(CGRect)frame andText:(NSString*)text;
 
 - (CGFloat)sizeOfHeightFromText:(NSString*)theText;
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText;

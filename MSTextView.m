@@ -14,19 +14,26 @@
 #import "MSParser.h"
 
 #define kLinkColor [UIColor colorWithRed:0.1 green:0.1 blue:1 alpha:1] 
+#define kLinkFont  [UIFont fontWithName:@"Helvetica-Bold" size:20.0]
+
+#define kDefaultFont [UIFont fontWithName:@"Helvetica" size:20.0]
+#define kDefaultTextColor [UIColor blackColor]
 
 @implementation MSTextView
 
-@synthesize text   = _text;
-@synthesize Parser = _Parser;
+@synthesize Parser    = _Parser;
+@synthesize text      = _text;
+@synthesize font      = _font;
+@synthesize textColor = _textColor;
 
 @synthesize delegate;
 
 - (id) init
 {
   if ( (self=[super init]) ) {
-    // clear by default, the user can change at his/her request
-    self.backgroundColor = [UIColor clearColor];    
+    self.backgroundColor = [UIColor clearColor];
+    _font = kDefaultFont;
+    _textColor = kDefaultTextColor;
   }
 
   return self;
@@ -35,14 +42,15 @@
 - (id) initWithFrame:(CGRect)frame
 {
   if ( (self=[super initWithFrame:frame]) ) {
-    // clear by default, the user can change at his/her request
-    self.backgroundColor = [UIColor clearColor];    
+    self.backgroundColor = [UIColor clearColor];
+    _font = kDefaultFont;
+    _textColor = kDefaultTextColor;
   }
 
   return self;
 }
 
-- (id) initWithText:(NSString*)text andFrame:(CGRect)frame
+- (id) initWithFrame:(CGRect)frame andText:(NSString*)text
 {
   if ( (self=[self initWithFrame:frame]) ) {
     _text   = [text retain];
@@ -82,8 +90,8 @@
 
     if ([cur isKindOfClass:[MSTextNode class]]) {
       lbl.text = [(MSTextNode*)cur Text];
-      lbl.font = [UIFont systemFontOfSize:16.0];
-      lbl.textColor = [UIColor blackColor];
+      lbl.font = self.font;
+      lbl.textColor = self.textColor;
 
       CGFloat tempSum = curX + [self sizeOfWidthFromText:lbl.text];
       if ([self nodesExceedFrameWidthForSum:tempSum]) {
@@ -102,7 +110,7 @@
     }
     else if ([cur isKindOfClass:[MSLinkNode class]]) {
       lbl.text = [(MSLinkNode*)cur URL];
-      lbl.font = [UIFont boldSystemFontOfSize:16.0];
+      lbl.font = kLinkFont;
       lbl.textColor = kLinkColor;
 
       CGFloat tempSum = curX + [self sizeOfWidthFromBoldText:lbl.text];
@@ -134,35 +142,25 @@
 
 - (CGFloat)sizeOfHeightFromText:(NSString*)theText
 {
-  UIFont *font = [UIFont systemFontOfSize:16.0];
-  // numberOfLines = ceilf([theText sizeWithFont:font] constrainedToSize:[CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap].height/20.0);
-
-  CGSize size = [theText sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+  CGSize size = [theText sizeWithFont:_font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
   return size.height;
 }
 
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
 {
-  UIFont *font = [UIFont boldSystemFontOfSize:16.0];
-  // numberOfLines = ceilf([theText sizeWithFont:font] constrainedToSize:[CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap].height/20.0);
-
-  CGSize size = [theText sizeWithFont:font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+  CGSize size = [theText sizeWithFont:kLinkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
   return size.height;
 }
 
 - (CGFloat)sizeOfWidthFromText:(NSString*)theText
 {
-  UIFont *font = [UIFont systemFontOfSize:16.0];
-  CGSize sizeToMakeLabel = [theText sizeWithFont:font]; 
-  
+  CGSize sizeToMakeLabel = [theText sizeWithFont:_font]; 
   return sizeToMakeLabel.width;
 }
 
 - (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText
 {
-  UIFont *font = [UIFont boldSystemFontOfSize:16.0];
-  CGSize sizeToMakeLabel = [theText sizeWithFont:font]; 
-  
+  CGSize sizeToMakeLabel = [theText sizeWithFont:kLinkFont]; 
   return sizeToMakeLabel.width;
 }
 
