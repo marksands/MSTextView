@@ -22,14 +22,31 @@
 
 @synthesize delegate;
 
-- (id) initWithText:(NSString*)text andFrame:(CGRect)frame
+- (id) init
+{
+  if ( (self=[super init]) ) {
+    // clear by default, the user can change at his/her request
+    self.backgroundColor = [UIColor clearColor];    
+  }
+
+  return self;
+}
+
+- (id) initWithFrame:(CGRect)frame
 {
   if ( (self=[super initWithFrame:frame]) ) {
-    _text = [text retain];
-    _Parser = [[MSParser alloc] initWithParseText:_text];    
-
     // clear by default, the user can change at his/her request
-    self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [UIColor clearColor];    
+  }
+
+  return self;
+}
+
+- (id) initWithText:(NSString*)text andFrame:(CGRect)frame
+{
+  if ( (self=[self initWithFrame:frame]) ) {
+    _text   = [text retain];
+    _Parser = [[MSParser alloc] initWithParseText:_text];    
   }
 
   return self;
@@ -38,6 +55,9 @@
 - (void) setText:(NSString *)txt
 {
   _text = [txt retain];
+  if (!_Parser) {
+    _Parser = [[MSParser alloc] initWithParseText:_text];    
+  }
 }
 
 #pragma mark -

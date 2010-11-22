@@ -15,9 +15,7 @@
 - (id) init
 {
   if ( (self = [super init]) ) {
-    [self addTarget:self
-             action:@selector(linkTouched) 
-   forControlEvents:UIControlEventTouchUpInside];      
+    // this class ins't used..yet
   }
   
   return self;

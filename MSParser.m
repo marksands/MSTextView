@@ -44,7 +44,7 @@
   }
 }
 
-// three20
+// modified from three20 https://github.com/facebook/three20/blob/master/src/Three20Style/Sources/TTStyledTextParser.m#L112-155
 - (void)parseURLs:(NSString*)string
 {
   NSInteger stringIndex = 0;
@@ -56,17 +56,26 @@
                                          range:searchRange];
     if (startRange.location == NSNotFound) {
       NSString *text = [string substringWithRange:searchRange];
-      MSTextNode *node = [[[MSTextNode alloc] initWithText:text] autorelease];
-      [self addNode:node];
-      break;
+      NSArray *splitChars = [text componentsSeparatedByString:@" "];
+      for ( id obj in splitChars ) {
+        NSString *temp = [obj stringByAppendingString:@" "];
+        MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
+        [self addNode:node];  
+      }
 
+      break;
     }
     else {
       NSRange beforeRange = NSMakeRange(searchRange.location, startRange.location - searchRange.location);
       if (beforeRange.length) {
         NSString *text = [string substringWithRange:beforeRange];
-        MSTextNode *node = [[[MSTextNode alloc] initWithText:text] autorelease];
-        [self addNode:node];
+        NSArray *splitChars = [text componentsSeparatedByString:@" "];
+        // skip the final space/@" " node
+        for (int i = 0; i < [splitChars count]-1; i++) {
+          NSString *temp = [[splitChars objectAtIndex:i] stringByAppendingString:@" "];
+          MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
+          [self addNode:node]; 
+        }      
       }
 
       NSRange subSearchRange = NSMakeRange(startRange.location, string.length - startRange.location);
@@ -75,14 +84,14 @@
                                          range:subSearchRange];
       if (endRange.location == NSNotFound) {
         NSString *URL = [string substringWithRange:subSearchRange];
-        MSLinkNode *node = [[[MSLinkNode alloc] initWithURL:URL] autorelease];
+        MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
         [self addNode:node];
         break;  
       }
       else {
         NSRange URLRange = NSMakeRange(startRange.location, endRange.location - startRange.location);
         NSString *URL = [string substringWithRange:URLRange];
-        MSLinkNode *node = [[[MSLinkNode alloc] initWithURL:URL] autorelease];
+        MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
         [self addNode:node];
         stringIndex = endRange.location;
       }
