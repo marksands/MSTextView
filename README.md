@@ -6,6 +6,10 @@ A URL aware TextView for iOS
 
 Over the summer, I found a hack that solved my problem of having an "in app Safari" for links activated from UITextViews. I made a demo project  [here](https://github.com/marksands/UITextViewLinkOptions) and even [blogged](http://52apps.net/post/879106231/method-swizzling-uitextview-and-safari) about it. However, I'm 99.9% sure that Apple won't allow this "hack" to go through the App Store. I know the API can handle this more effectively with entities, but I threw this little project together anyway since I needed something now. If you are using my hack, I suggest you switch to using this method if you need an immediate solution to get you through the app store.
 
+## Installation
+
+Copy over all `MS` files into your project folder and you're all set. This includes `MSTextView.h`, `MSTextView.m`, `MSParser.h`, `MSParser.m`, and folders `MSNode/`, and `MSElement/`.
+
 ## Using MSTextView
 
 This is a very early release, so be aware of bugs. I (hopefully) designed this to be a drop-in replacement of UITextView for each TextView that you wanted to have link aware.
