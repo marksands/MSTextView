@@ -118,9 +118,13 @@
       else {
         localHeight = (localHeight < [self sizeOfHeightFromBoldText:lbl.text]) ? [self sizeOfHeightFromBoldText:lbl.text] : localHeight;
       }
-      
+
       lbl.frame = CGRectMake(curX, curY, [self sizeOfWidthFromBoldText:lbl.text], [self sizeOfHeightFromBoldText:lbl.text]);
       curX += [self sizeOfWidthFromBoldText:lbl.text];
+
+      // links can be long
+      lbl.lineBreakMode = UILineBreakModeCharacterWrap;
+      lbl.numberOfLines = 0;
 
       [self addSubview:lbl];
 
@@ -138,13 +142,13 @@
 
 - (CGFloat)sizeOfHeightFromText:(NSString*)theText
 {
-  CGSize size = [theText sizeWithFont:_font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+  CGSize size = [theText sizeWithFont:_font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
   return size.height;
 }
 
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
 {
-  CGSize size = [theText sizeWithFont:kLinkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeWordWrap];
+  CGSize size = [theText sizeWithFont:kLinkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
   return size.height;
 }
 
@@ -157,7 +161,7 @@
 - (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText
 {
   CGSize sizeToMakeLabel = [theText sizeWithFont:kLinkFont]; 
-  return sizeToMakeLabel.width;
+  return (sizeToMakeLabel.width > 300) ? 300 : sizeToMakeLabel.width;
 }
 
 - (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum

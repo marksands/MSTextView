@@ -15,7 +15,7 @@
 {
   NSString *sample = @"Check out my GitHub page http://github.com/marksands or go to http://google.com instead. Optionally, try out a news site such as http://yahoo.com or http://cnn.com";
 
-  MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 310, 480)];
+  MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 300, 480)];
   textView.delegate = self;
   textView.text = sample;
   [self.view addSubview:textView];  

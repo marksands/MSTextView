@@ -29,8 +29,8 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1328, 536}}";
-			sepNavSelRange = "{476, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1328, 559}}";
+			sepNavSelRange = "{262, 0}";
 			sepNavVisRange = "{0, 1025}";
 		};
 	};
@@ -68,8 +68,8 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 312101494;
-			PBXWorkspaceStateSaveDate = 312101494;
+			PBXPerProjectTemplateStateSaveDate = 312104309;
+			PBXWorkspaceStateSaveDate = 312104309;
 		};
 		perUserProjectItems = {
 			4D8676D4129A247900BA7630 = 4D8676D4129A247900BA7630 /* PBXTextBookmark */;
@@ -78,9 +78,8 @@
 			4D867703129A258100BA7630 = 4D867703129A258100BA7630 /* PBXTextBookmark */;
 			4D867704129A258100BA7630 = 4D867704129A258100BA7630 /* PBXTextBookmark */;
 			4D867714129A285800BA7630 = 4D867714129A285800BA7630 /* PBXTextBookmark */;
-			4D867715129A285800BA7630 = 4D867715129A285800BA7630 /* PBXTextBookmark */;
 			4D86771F129A2B4500BA7630 = 4D86771F129A2B4500BA7630 /* PBXTextBookmark */;
-			4DC64F35129A4A7900BFAB26 /* PBXTextBookmark */ = 4DC64F35129A4A7900BFAB26 /* PBXTextBookmark */;
+			4DC64F40129A4B9100BFAB26 = 4DC64F40129A4B9100BFAB26 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4D867699129A234700BA7630 /* Source Control */;
 		userBuildSettings = {
@@ -196,32 +195,22 @@
 		vrLen = 291;
 		vrLoc = 0;
 	};
-	4D867715129A285800BA7630 /* PBXTextBookmark */ = {
-		isa = PBXTextBookmark;
-		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
-		name = "MSTextViewViewController.m: 10";
-		rLen = 0;
-		rLoc = 205;
-		rType = 0;
-		vrLen = 1025;
-		vrLoc = 0;
-	};
 	4D86771F129A2B4500BA7630 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 24";
 		rLen = 0;
-		rLoc = 684;
+		rLoc = 1089;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
 	};
-	4DC64F35129A4A7900BFAB26 /* PBXTextBookmark */ = {
+	4DC64F40129A4B9100BFAB26 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
-		name = "MSTextViewViewController.m: 17";
+		name = "MSTextViewViewController.m: 12";
 		rLen = 0;
-		rLoc = 476;
+		rLoc = 262;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;

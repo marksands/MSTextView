@@ -47,6 +47,10 @@
 // modified from three20 https://github.com/facebook/three20/blob/master/src/Three20Style/Sources/TTStyledTextParser.m#L112-155
 - (void)parseURLs:(NSString*)string
 {
+  // prevent chaining of urls by newline character. This should really be improved :/
+  NSString *temp = [string stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
+  string = temp;
+
   NSInteger stringIndex = 0;
 
   while (stringIndex < string.length) {
