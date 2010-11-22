@@ -9,7 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MSLinkElement.h"
 
-#define kHighlightColor [UIColor colorWithRed:0.2 green:0.4 blue:0.8 alpha:0.10] 
+
+#define kHighlightColor [UIColor colorWithRed:172.0/255.0 green:200.0/255.0 blue:236.0/255.0 alpha:0.25];
 
 #define kScreenViewFrame CGRectMake(self.bounds.origin.x-1, self.bounds.origin.y-2, self.bounds.size.width+2, self.bounds.size.height+4)
 

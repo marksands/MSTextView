@@ -13,7 +13,7 @@
 
 #import "MSParser.h"
 
-#define kLinkColor [UIColor colorWithRed:0.1 green:0.1 blue:1 alpha:1] 
+#define kLinkColor [UIColor colorWithRed:35.0/255.0 green:110.0/255.0 blue:216.0/255.0 alpha:1]
 #define kLinkFont  [UIFont fontWithName:@"Helvetica-Bold" size:20.0]
 
 #define kDefaultFont [UIFont fontWithName:@"Helvetica" size:20.0]
