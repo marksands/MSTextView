@@ -29,9 +29,9 @@
 	};
 	28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1167, 564}}";
-			sepNavSelRange = "{398, 0}";
-			sepNavVisRange = "{0, 1031}";
+			sepNavIntBoundsRect = "{{0, 0}, {1328, 541}}";
+			sepNavSelRange = "{684, 0}";
+			sepNavVisRange = "{0, 1025}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -113,6 +113,8 @@
 			4D867715129A285800BA7630 /* PBXTextBookmark */ = 4D867715129A285800BA7630 /* PBXTextBookmark */;
 			4D867716129A285800BA7630 /* PBXTextBookmark */ = 4D867716129A285800BA7630 /* PBXTextBookmark */;
 			4D867717129A286000BA7630 /* PBXTextBookmark */ = 4D867717129A286000BA7630 /* PBXTextBookmark */;
+			4D86771A129A2A6F00BA7630 /* PBXTextBookmark */ = 4D86771A129A2A6F00BA7630 /* PBXTextBookmark */;
+			4D86771D129A2A7200BA7630 /* PBXTextBookmark */ = 4D86771D129A2A7200BA7630 /* PBXTextBookmark */;
 		};
 		sourceControlManager = 4D867699129A234700BA7630 /* Source Control */;
 		userBuildSettings = {
@@ -252,7 +254,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 20";
 		rLen = 0;
-		rLoc = 600;
+		rLoc = 594;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -262,7 +264,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 21";
 		rLen = 0;
-		rLoc = 626;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -282,7 +284,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 21";
 		rLen = 0;
-		rLoc = 626;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -292,7 +294,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 22";
 		rLen = 0;
-		rLoc = 626;
+		rLoc = 620;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -346,7 +348,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 24";
 		rLen = 0;
-		rLoc = 687;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -356,7 +358,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 31";
 		rLen = 0;
-		rLoc = 831;
+		rLoc = 825;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -376,7 +378,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 31";
 		rLen = 0;
-		rLoc = 831;
+		rLoc = 825;
 		rType = 0;
 		vrLen = 1029;
 		vrLoc = 0;
@@ -476,7 +478,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 22";
 		rLen = 0;
-		rLoc = 687;
+		rLoc = 681;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -496,7 +498,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 25";
 		rLen = 1;
-		rLoc = 705;
+		rLoc = 699;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -506,7 +508,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 25";
 		rLen = 1;
-		rLoc = 705;
+		rLoc = 699;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -516,7 +518,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 25";
 		rLen = 0;
-		rLoc = 691;
+		rLoc = 685;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -526,7 +528,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 25";
 		rLen = 0;
-		rLoc = 691;
+		rLoc = 685;
 		rType = 0;
 		vrLen = 1025;
 		vrLoc = 0;
@@ -556,7 +558,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 16";
 		rLen = 0;
-		rLoc = 400;
+		rLoc = 399;
 		rType = 0;
 		vrLen = 1030;
 		vrLoc = 0;
@@ -569,6 +571,26 @@
 		rLoc = 398;
 		rType = 0;
 		vrLen = 1031;
+		vrLoc = 0;
+	};
+	4D86771A129A2A6F00BA7630 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
+		name = "MSTextViewViewController.m: 16";
+		rLen = 0;
+		rLoc = 399;
+		rType = 0;
+		vrLen = 1025;
+		vrLoc = 0;
+	};
+	4D86771D129A2A7200BA7630 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
+		name = "MSTextViewViewController.m: 24";
+		rLen = 0;
+		rLoc = 684;
+		rType = 0;
+		vrLen = 1025;
 		vrLoc = 0;
 	};
 }
