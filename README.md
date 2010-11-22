@@ -35,9 +35,10 @@ Make sure to include the header file `"MSTextView.h"` and use the protocol `<MST
       [self.navigationController pushViewController:webview animated:YES];
       [webview release];
     }
-    
-![http://img.skitch.com/20101122-n21pyptuxnjbj5b5hx3e8bhfjy.png](http://img.skitch.com/20101122-n21pyptuxnjbj5b5hx3e8bhfjy.png)
-![http://img.skitch.com/20101122-dw87bf94m6dk5um371x5q6f6bq.png](http://img.skitch.com/20101122-dw87bf94m6dk5um371x5q6f6bq.png)
+
+![http://img.skitch.com/20101122-q1ux7t88irw69xegj8a98ahwqw.png](http://img.skitch.com/20101122-q1ux7t88irw69xegj8a98ahwqw.png)
+![http://img.skitch.com/20101122-n22d16kwq6bgrjp8iw65tqqjyq.png](http://img.skitch.com/20101122-n22d16kwq6bgrjp8iw65tqqjyq.png)
+![http://img.skitch.com/20101122-kfr44ghhj33bie6kts8icnqn81.png](http://img.skitch.com/20101122-kfr44ghhj33bie6kts8icnqn81.png)
 
 # License 
 
