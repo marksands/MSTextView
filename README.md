@@ -10,7 +10,7 @@ Over the summer, I found a hack that solved my problem of having an "in app Safa
 
 Copy over all `MS` files into your project folder and you're all set. This includes `MSTextView.h`, `MSTextView.m`, `MSParser.h`, `MSParser.m`, and folders `MSNode/`, and `MSElement/`.
 
-## Using MSTextView
+# Using MSTextView
 
 This is a very early release, so be aware of bugs. I (hopefully) designed this to be a drop-in replacement of UITextView for each TextView that you wanted to have link aware.
 
@@ -39,7 +39,7 @@ Make sure to include the header file `"MSTextView.h"` and use the protocol `<MST
 ![http://img.skitch.com/20101122-n21pyptuxnjbj5b5hx3e8bhfjy.png](http://img.skitch.com/20101122-n21pyptuxnjbj5b5hx3e8bhfjy.png)
 ![http://img.skitch.com/20101122-dw87bf94m6dk5um371x5q6f6bq.png](http://img.skitch.com/20101122-dw87bf94m6dk5um371x5q6f6bq.png)
 
-## License 
+# License 
 
 Copyright (c) 2010 Mark Sands
 
