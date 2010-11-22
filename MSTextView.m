@@ -71,10 +71,6 @@
 #pragma mark -
 #pragma mark UILabel
 
-// need curY to update globally where the y coordinate is at on each line
-// the localHeight will tell us how high the line should be. sizeOfHeightFromText or sizeOfHeightFromBoldText. needs to reset on newline.
-// curX will tell us where we are relative to self.bounds curX makes sure the sum of all nodes on the current line is < self.bounds.size.width
-
 - (void) layoutSubviews
 {
   CGFloat curY = self.bounds.origin.y;
