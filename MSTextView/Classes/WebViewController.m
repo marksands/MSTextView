@@ -52,7 +52,7 @@ typedef enum {
     [self.view addSubview:toolbar];
 
     
-    UIBarButtonItem *flexItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem *flexItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
     
     NSArray *items = [NSArray arrayWithObjects: flexItem, backButton, flexItem, flexItem, flexItem, forwardButton, 
                                                 flexItem, flexItem, flexItem, flexItem, flexItem, flexItem,
