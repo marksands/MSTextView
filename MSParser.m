@@ -9,8 +9,10 @@
 #import "MSParser.h"
 
 #import "MSNode.h"
+
 #import "MSTextNode.h"
 #import "MSLinkNode.h"
+#import "MSLineBreakNode.h"
 
 @implementation  MSParser
 
@@ -39,6 +41,7 @@
     _tail = node;
   }
   else {
+    node.parent = _tail;
     _tail.child = node;
     _tail = node;
   }
@@ -47,10 +50,6 @@
 // modified from three20 https://github.com/facebook/three20/blob/master/src/Three20Style/Sources/TTStyledTextParser.m#L112-155
 - (void)parseURLs:(NSString*)string
 {
-  // prevent chaining of urls by newline character. This should really be improved :/
-  NSString *temp = [string stringByReplacingOccurrencesOfString:@"\n" withString:@" "];
-  string = temp;
-
   NSInteger stringIndex = 0;
 
   while (stringIndex < string.length) {
@@ -61,12 +60,12 @@
     if (startRange.location == NSNotFound) {
       NSString *text = [string substringWithRange:searchRange];
       NSArray *splitChars = [text componentsSeparatedByString:@" "];
-      for ( id obj in splitChars ) {
+      for ( id obj in splitChars) {
         NSString *temp = [obj stringByAppendingString:@" "];
         MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
-        [self addNode:node];  
+        [self addNode:node]; 
       }
-
+    
       break;
     }
     else {
@@ -74,18 +73,17 @@
       if (beforeRange.length) {
         NSString *text = [string substringWithRange:beforeRange];
         NSArray *splitChars = [text componentsSeparatedByString:@" "];
-        // skip the final space/@" " node
-        for (int i = 0; i < [splitChars count]-1; i++) {
-          NSString *temp = [[splitChars objectAtIndex:i] stringByAppendingString:@" "];
+        for ( id obj in splitChars) {
+          NSString *temp = [obj stringByAppendingString:@" "];
           MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
           [self addNode:node]; 
-        }      
-      }
+        }
+      } 
 
       NSRange subSearchRange = NSMakeRange(startRange.location, string.length - startRange.location);
       NSRange endRange = [string rangeOfString:@" " 
                                        options:NSCaseInsensitiveSearch
-                                         range:subSearchRange];
+                                         range:subSearchRange];      
       if (endRange.location == NSNotFound) {
         NSString *URL = [string substringWithRange:subSearchRange];
         MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
@@ -100,6 +98,111 @@
         stringIndex = endRange.location;
       }
     }
+  }
+  
+  [self splitNodesOnLineBreak];
+}
+
+- (void) splitNodesOnLineBreak
+{
+  MSNode *cur = _root;
+  while ( cur != nil )
+  {
+    MSNode *btm = cur.child;
+    MSNode *top;
+
+    if (cur == _root) {
+      top = _root;
+    }
+    else {
+      top = cur.parent;
+    }
+    
+    if ([cur isMemberOfClass:[MSTextNode class]]) {
+
+      NSArray *splitText = [[(MSTextNode*)cur Text] componentsSeparatedByString:@"\n"];
+      if ([splitText count] > 1) {
+        for (NSString* obj in splitText)
+        {
+          MSNode *node;
+          NSRange isURL = [obj rangeOfString:@"http://" options:NSCaseInsensitiveSearch range:NSMakeRange(0, obj.length)];
+          if (isURL.location == NSNotFound) {
+            node = [[[MSTextNode alloc] initWithText:obj] autorelease];          
+          }
+          else {
+            node = [[[MSLinkNode alloc] initWithURL:obj] autorelease];
+          }
+
+          if (cur == _root) {
+            [_root release];
+            _root = [node retain];
+          } else {
+            node.parent = top;
+            top.child   = node;
+          }
+
+          // don't add \n to end of array
+          if (obj != [splitText lastObject]) {
+            MSLineBreakNode *lbnode = [[(MSLineBreakNode*)[MSLineBreakNode alloc] init] autorelease];
+            lbnode.parent = node;
+            node.child = lbnode;            
+            
+            cur = lbnode;
+          }
+          else {
+            cur = node;
+          }
+          
+          top = cur;
+        }
+        cur.child = btm;
+        btm.parent = cur;
+      }
+    }
+    else if ([cur isMemberOfClass:[MSLinkNode class]]) {
+      
+      NSArray *splitLink = [[(MSLinkNode*)cur URL] componentsSeparatedByString:@"\n"];
+      if ([splitLink count] > 1) {
+        for (NSString* obj in splitLink)
+        {
+          MSNode *node;
+          NSRange isURL = [obj rangeOfString:@"http://" options:NSCaseInsensitiveSearch range:NSMakeRange(0, obj.length)];
+          if (isURL.location == NSNotFound) {
+            node = [[[MSTextNode alloc] initWithText:obj] autorelease];          
+          }
+          else {
+            node = [[[MSLinkNode alloc] initWithURL:obj] autorelease];
+          }
+
+          if (cur == _root) {
+            [_root release];
+            _root = [node retain];
+          } else {
+            node.parent = top;
+            top.child   = node;
+          }
+
+          // don't add \n to end of array
+          if (obj != [splitLink lastObject]) {
+            MSLineBreakNode *lbnode = [[(MSLineBreakNode*)[MSLineBreakNode alloc] init] autorelease];
+            lbnode.parent = node;
+            node.child = lbnode;            
+        
+            cur = lbnode;
+          }
+          else {
+            cur = node;
+          }          
+          
+          top = cur;
+        }
+        cur.child = btm;
+        btm.parent = cur;
+      }
+    }
+
+    cur = cur.child;
+
   }
 }
 

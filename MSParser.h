@@ -22,5 +22,6 @@
 
 - (void)addNode:(MSNode*)node;
 - (void)parseURLs:(NSString*)string;
+- (void) splitNodesOnLineBreak;
 
 @end

@@ -29,6 +29,7 @@
 		4D8676C3129A23A200BA7630 /* forward.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8676BF129A23A200BA7630 /* forward.png */; };
 		4D8676C4129A23A200BA7630 /* forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4D8676C0129A23A200BA7630 /* forward@2x.png */; };
 		4D8676EF129A24FE00BA7630 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D8676EE129A24FE00BA7630 /* RootViewController.xib */; };
+		4DD19C3D129B7D8300B67C13 /* MSLineBreakNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DD19C3C129B7D8300B67C13 /* MSLineBreakNode.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		4D8676BF129A23A200BA7630 /* forward.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forward.png; sourceTree = "<group>"; };
 		4D8676C0129A23A200BA7630 /* forward@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forward@2x.png"; sourceTree = "<group>"; };
 		4D8676EE129A24FE00BA7630 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		4DD19C3B129B7D8300B67C13 /* MSLineBreakNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLineBreakNode.h; sourceTree = "<group>"; };
+		4DD19C3C129B7D8300B67C13 /* MSLineBreakNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLineBreakNode.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MSTextView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MSTextView-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -181,6 +184,8 @@
 		4D8676A6129A237C00BA7630 /* MSNode */ = {
 			isa = PBXGroup;
 			children = (
+				4DD19C3B129B7D8300B67C13 /* MSLineBreakNode.h */,
+				4DD19C3C129B7D8300B67C13 /* MSLineBreakNode.m */,
 				4D8676A7129A237C00BA7630 /* MSLinkNode.h */,
 				4D8676A8129A237C00BA7630 /* MSLinkNode.m */,
 				4D8676A9129A237C00BA7630 /* MSNode.h */,
@@ -262,6 +267,7 @@
 				4D8676B7129A237C00BA7630 /* MSTextNode.m in Sources */,
 				4D8676B8129A237C00BA7630 /* MSParser.m in Sources */,
 				4D8676B9129A237C00BA7630 /* MSTextView.m in Sources */,
+				4DD19C3D129B7D8300B67C13 /* MSLineBreakNode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

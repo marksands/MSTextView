@@ -13,7 +13,6 @@
 #import "MSTextElement.h"
 
 @class MSNode;
-@class MSFrame;
 @class MSParser;
 
 @protocol MSTextViewDelegate

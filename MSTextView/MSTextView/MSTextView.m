@@ -10,6 +10,7 @@
 
 #import "MSTextNode.h"
 #import "MSLinkNode.h"
+#import "MSLineBreakNode.h"
 
 #import "MSParser.h"
 
@@ -75,7 +76,7 @@
 {
   CGFloat curY = self.bounds.origin.y;
   CGFloat curX = self.bounds.origin.x;
-  CGFloat localHeight = curY;
+  CGFloat localHeight = 20.0;
 
   MSNode *cur = _Parser.root;
 
@@ -130,9 +131,12 @@
 
       MSLinkElement *el = [[MSLinkElement alloc] initWithFrame:lbl.frame andURL:lbl.text];
       el.delegate = self;
-      el.backgroundColor = [UIColor clearColor];
       [self addSubview:el];
       [el release];
+    }
+    else if ([cur isKindOfClass:[MSLineBreakNode class]]) {
+      curX = self.bounds.origin.x;
+      curY += localHeight;
     }
 
     cur = cur.child;    
