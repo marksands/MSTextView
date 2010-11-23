@@ -274,7 +274,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>3</integer>
+									<integer>7</integer>
 									<integer>1</integer>
 									<integer>0</integer>
 								</array>
@@ -317,7 +317,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MSParser.m</string>
+								<string>MSTextView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MSParser.m</string>
+										<string>MSTextView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>4DD19C3E129B7D8800B67C13</string>
+										<string>4DD19C51129B7E7300B67C13</string>
 										<key>history</key>
 										<array>
 											<string>4D8676D4129A247900BA7630</string>
@@ -346,10 +346,10 @@
 											<string>4D66A45C129B73240008DC17</string>
 											<string>4DD19BFC129B794C00B67C13</string>
 											<string>4DD19C13129B7AB200B67C13</string>
-											<string>4DD19C2B129B7CF800B67C13</string>
-											<string>4DD19C2C129B7CF800B67C13</string>
 											<string>4DD19C37129B7D5500B67C13</string>
-											<string>4DD19C38129B7D5500B67C13</string>
+											<string>4DD19C4E129B7E7300B67C13</string>
+											<string>4DD19C4F129B7E7300B67C13</string>
+											<string>4DD19C50129B7E7300B67C13</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

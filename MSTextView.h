@@ -23,6 +23,7 @@
 @interface MSTextView : UIView <MSLinkDelegate> {
   NSString *_text;
   UIFont   *_font;
+  UIFont   *_linkFont;
   UIColor  *_textColor;
   
   MSParser *_Parser;
@@ -35,6 +36,7 @@
 
 @property (nonatomic, assign) NSString *text;
 @property (nonatomic, assign) UIFont   *font;
+@property (nonatomic, assign) UIFont   *linkFont;
 @property (nonatomic, assign) UIColor  *textColor;
 
 - (id) initWithFrame:(CGRect)frame andText:(NSString*)text;

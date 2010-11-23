@@ -25,6 +25,7 @@
 @synthesize Parser    = _Parser;
 @synthesize text      = _text;
 @synthesize font      = _font;
+@synthesize linkFont  = _linkFont;
 @synthesize textColor = _textColor;
 
 @synthesize delegate;
@@ -34,6 +35,7 @@
   if ( (self=[super init]) ) {
     self.backgroundColor = [UIColor clearColor];
     _font = kDefaultFont;
+    _linkFont = kLinkFont;
     _textColor = kDefaultTextColor;
   }
 
@@ -45,6 +47,7 @@
   if ( (self=[super initWithFrame:frame]) ) {
     self.backgroundColor = [UIColor clearColor];
     _font = kDefaultFont;
+    _linkFont = kLinkFont;
     _textColor = kDefaultTextColor;
   }
 
@@ -107,7 +110,7 @@
     }
     else if ([cur isKindOfClass:[MSLinkNode class]]) {
       lbl.text = [(MSLinkNode*)cur URL];
-      lbl.font = kLinkFont;
+      lbl.font = _linkFont;
       lbl.textColor = kLinkColor;
 
       CGFloat tempSum = curX + [self sizeOfWidthFromBoldText:lbl.text];
@@ -152,7 +155,7 @@
 
 - (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
 {
-  CGSize size = [theText sizeWithFont:kLinkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
+  CGSize size = [theText sizeWithFont:_linkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
   return size.height;
 }
 
@@ -164,7 +167,7 @@
 
 - (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText
 {
-  CGSize sizeToMakeLabel = [theText sizeWithFont:kLinkFont]; 
+  CGSize sizeToMakeLabel = [theText sizeWithFont:_linkFont]; 
   return (sizeToMakeLabel.width > 300) ? 300 : sizeToMakeLabel.width;
 }
 
