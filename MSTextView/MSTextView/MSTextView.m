@@ -142,6 +142,8 @@
       curY += localHeight;
     }
 
+    NSLog(@"%@",lbl.text);
+    
     cur = cur.child;    
     [lbl release];
   }

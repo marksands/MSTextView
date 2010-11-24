@@ -65,7 +65,7 @@
         MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
         [self addNode:node]; 
       }
-    
+
       break;
     }
     else {
@@ -76,9 +76,9 @@
         for ( id obj in splitChars) {
           NSString *temp = [obj stringByAppendingString:@" "];
           MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
-          [self addNode:node]; 
+          [self addNode:node];             
         }
-      } 
+      }
 
       NSRange subSearchRange = NSMakeRange(startRange.location, string.length - startRange.location);
       NSRange endRange = [string rangeOfString:@" " 
@@ -101,6 +101,25 @@
   }
   
   [self splitNodesOnLineBreak];
+  [self cleanWhiteSpace];
+}
+
+- (void) cleanWhiteSpace
+{
+  MSNode *cur = _root;
+  while ( cur != nil ) {
+    if ([cur isMemberOfClass:[MSTextNode class]] && [[(MSTextNode*)cur Text] isEqualToString:@" "] && [cur.child isMemberOfClass:[MSLinkNode class]]) {
+      cur.parent.child = cur.child;
+      cur.child.parent = cur.parent;
+    }
+    cur = cur.child;
+  }
+  
+  cur = _tail;  
+    // remove trailing space at end of text
+  if ([cur isMemberOfClass:[MSTextNode class]]) {
+    [(MSTextNode*)cur setText:[[(MSTextNode*)cur Text] stringByReplacingOccurrencesOfString:@" " withString:@""]];
+  }
 }
 
 - (void) splitNodesOnLineBreak
