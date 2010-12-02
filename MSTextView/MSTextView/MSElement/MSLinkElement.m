@@ -31,7 +31,7 @@
   return self;
 }
 
-- (id) initWithFrame:(CGRect)frame andURL:(NSString*)URL
+- (id) initWithFrame:(CGRect)frame andURL:(NSURL*)URL
 {
   if ( (self = [self initWithFrame:frame]) ) {
     _URL = URL;

@@ -9,11 +9,11 @@
 #import "MSElement.h"
 
 @protocol MSLinkDelegate
-- (void) handleURL:(NSString*)url;
+- (void) handleURL:(NSURL*)url;
 @end
 
 @interface MSLinkElement : MSElement {
-  NSString *_URL;
+  NSURL *_URL;
   id<MSLinkDelegate> delegate;
   
   UIView *_screenView;
@@ -21,10 +21,10 @@
 
 @property (nonatomic, assign) id<MSLinkDelegate> delegate;
 
-@property (nonatomic, retain) NSString *URL;
+@property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) UIView *_screenView;
 
-- (id) initWithFrame:(CGRect)frame andURL:(NSString*)URL;
+- (id) initWithFrame:(CGRect)frame andURL:(NSURL*)URL;
 - (void)handleURL;
 
 @end

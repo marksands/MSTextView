@@ -18,15 +18,16 @@
   MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 300, 480)];
   textView.delegate = self;
   textView.text = sample;
+  textView.font = [UIFont fontWithName:@"Helvetica" size:20];
   [self.view addSubview:textView];  
-  [textView release];  
+  [textView release];
 }
 
 #pragma mark -
 #pragma mark MSTextViewDelegate
 
-- (void) handleURL:(NSString*)url {
-  WebViewController *webview = [[WebViewController alloc] initWithURL:[NSURL URLWithString:url]];
+- (void) handleURL:(NSURL*)url {  
+  WebViewController *webview = [[WebViewController alloc] initWithURL:url];
   [self.navigationController pushViewController:webview animated:YES];
   [webview release];
 }
@@ -34,7 +35,7 @@
 #pragma mark -
 
 - (void)dealloc {
-    [super dealloc];
+  [super dealloc];
 }
 
 @end

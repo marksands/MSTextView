@@ -85,21 +85,21 @@
                                        options:NSCaseInsensitiveSearch
                                          range:subSearchRange];      
       if (endRange.location == NSNotFound) {
-        NSString *URL = [string substringWithRange:subSearchRange];
+        NSURL *URL = [NSURL URLWithString:[string substringWithRange:subSearchRange]];
         MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
         [self addNode:node];
         break;  
       }
       else {
         NSRange URLRange = NSMakeRange(startRange.location, endRange.location - startRange.location);
-        NSString *URL = [string substringWithRange:URLRange];
+        NSURL *URL = [NSURL URLWithString:[string substringWithRange:URLRange]];
         MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
         [self addNode:node];
         stringIndex = endRange.location;
       }
     }
   }
-  
+
   [self splitNodesOnLineBreak];
   [self cleanWhiteSpace];
 }
@@ -149,7 +149,7 @@
             node = [[[MSTextNode alloc] initWithText:obj] autorelease];          
           }
           else {
-            node = [[[MSLinkNode alloc] initWithURL:obj] autorelease];
+            node = [[[MSLinkNode alloc] initWithURL:[NSURL URLWithString:obj]] autorelease];
           }
 
           if (cur == _root) {
@@ -180,7 +180,7 @@
     }
     else if ([cur isMemberOfClass:[MSLinkNode class]]) {
       
-      NSArray *splitLink = [[(MSLinkNode*)cur URL] componentsSeparatedByString:@"\n"];
+      NSArray *splitLink = [[NSString stringWithFormat:@"%@",[(MSLinkNode*)cur URL]] componentsSeparatedByString:@"\n"];      
       if ([splitLink count] > 1) {
         for (NSString* obj in splitLink)
         {
@@ -190,7 +190,7 @@
             node = [[[MSTextNode alloc] initWithText:obj] autorelease];          
           }
           else {
-            node = [[[MSLinkNode alloc] initWithURL:obj] autorelease];
+            node = [[[MSLinkNode alloc] initWithURL:[NSURL URLWithString:obj]] autorelease];
           }
 
           if (cur == _root) {

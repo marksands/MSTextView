@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "MSTextView.h"
 
 @interface MSTextViewViewController : UIViewController <MSTextViewDelegate> {

@@ -9,12 +9,12 @@
 #import "MSNode.h"
 
 @interface MSLinkNode : MSNode {
-  NSString *_URL;
+  NSURL *_URL;
 }
 
-@property (nonatomic, retain) NSString *URL;
+@property (nonatomic, retain) NSURL *URL;
 
-- (id) initWithURL:(NSString*)url;
-- (id) initWithURL:(NSString*)url next:(MSNode*)nextNode;
+- (id) initWithURL:(NSURL*)url;
+- (id) initWithURL:(NSURL*)url next:(MSNode*)nextNode;
 
 @end

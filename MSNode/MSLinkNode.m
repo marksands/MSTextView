@@ -12,7 +12,7 @@
 
 @synthesize URL = _URL;
 
-- (id) initWithURL:(NSString *)url
+- (id) initWithURL:(NSURL*)url
 {
   if ( (self = [self initWithURL:url next:nil]) ){
   }
@@ -20,7 +20,7 @@
   return self;
 }
 
-- (id) initWithURL:(NSString*)url next:(MSNode*)nextNode
+- (id) initWithURL:(NSURL*)url next:(MSNode*)nextNode
 {
   if ( (self = [super init]) ){
     self.URL = url;
@@ -31,7 +31,7 @@
 }
 
 - (NSString*)description {
-  return self.URL; 
+  return [NSString stringWithFormat:@"%@",self.URL];
 }
 
 - (void) dealloc

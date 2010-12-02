@@ -16,7 +16,7 @@
 @class MSParser;
 
 @protocol MSTextViewDelegate
-- (void) handleURL:(NSString*)url;
+- (void) handleURL:(NSURL*)url;
 @end
 
 

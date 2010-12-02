@@ -109,7 +109,7 @@
       [self addSubview:lbl];
     }
     else if ([cur isKindOfClass:[MSLinkNode class]]) {
-      lbl.text = [(MSLinkNode*)cur URL];
+      lbl.text = [NSString stringWithFormat:@"%@",[(MSLinkNode*)cur URL]];
       lbl.font = _linkFont;
       lbl.textColor = kLinkColor;
 
@@ -132,7 +132,7 @@
 
       [self addSubview:lbl];
 
-      MSLinkElement *el = [[MSLinkElement alloc] initWithFrame:lbl.frame andURL:lbl.text];
+      MSLinkElement *el = [[MSLinkElement alloc] initWithFrame:lbl.frame andURL:[(MSLinkNode*)cur URL]];
       el.delegate = self;
       [self addSubview:el];
       [el release];
@@ -142,8 +142,6 @@
       curY += localHeight;
     }
 
-    NSLog(@"%@",lbl.text);
-    
     cur = cur.child;    
     [lbl release];
   }
@@ -184,7 +182,7 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void) handleURL:(NSString*)url
+- (void) handleURL:(NSURL*)url
 {  
   if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
     [self.delegate handleURL:url];
