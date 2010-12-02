@@ -36,9 +36,9 @@ Make sure to include the header file `"MSTextView.h"` and use the protocol `<MST
       [webview release];
     }
 
-![http://img.skitch.com/20101123-epth2b21b1de638w1ctg45ksgm.png](http://img.skitch.com/20101123-epth2b21b1de638w1ctg45ksgm.png)
-![http://img.skitch.com/20101122-n22d16kwq6bgrjp8iw65tqqjyq.png](http://img.skitch.com/20101122-n22d16kwq6bgrjp8iw65tqqjyq.png)
-![http://img.skitch.com/20101122-kfr44ghhj33bie6kts8icnqn81.png](http://img.skitch.com/20101122-kfr44ghhj33bie6kts8icnqn81.png)
+![http://img.skitch.com/20101202-xmjjjthqknh8wcdskwfqbcfqum.png](http://img.skitch.com/20101202-xmjjjthqknh8wcdskwfqbcfqum.png)
+![http://img.skitch.com/20101202-98jtrsq1ptxifantqrm7grha.png](http://img.skitch.com/20101202-98jtrsq1ptxifantqrm7grha.png)
+![http://img.skitch.com/20101202-8i6ktqke26uh1yfaeb1j284typ.png](http://img.skitch.com/20101202-8i6ktqke26uh1yfaeb1j284typ.png)
 
 # License 
 
