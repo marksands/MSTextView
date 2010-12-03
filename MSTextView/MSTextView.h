@@ -16,7 +16,7 @@
 @class MSParser;
 
 @protocol MSTextViewDelegate
-- (void) handleURL:(NSURL*)url;
+- (void) handleURL:(NSURL *)url;
 @end
 
 
@@ -39,13 +39,13 @@
 @property (nonatomic, assign) UIFont   *linkFont;
 @property (nonatomic, assign) UIColor  *textColor;
 
-- (id) initWithFrame:(CGRect)frame andText:(NSString*)text;
+- (id) initWithFrame:(CGRect)frame andText:(NSString *)text;
 
-- (CGFloat)sizeOfHeightFromText:(NSString*)theText;
-- (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText;
+- (CGFloat)sizeOfHeightFromText:(NSString *)theText;
+- (CGFloat)sizeOfHeightFromBoldText:(NSString *)theText;
 
-- (CGFloat)sizeOfWidthFromText:(NSString*)theText;
-- (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText;
+- (CGFloat)sizeOfWidthFromText:(NSString *)theText;
+- (CGFloat)sizeOfWidthFromBoldText:(NSString *)theText;
 
 - (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum;
 

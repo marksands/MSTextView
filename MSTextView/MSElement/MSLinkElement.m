@@ -31,7 +31,7 @@
   return self;
 }
 
-- (id) initWithFrame:(CGRect)frame andURL:(NSURL*)URL
+- (id) initWithFrame:(CGRect)frame andURL:(NSURL *)URL
 {
   if ( (self = [self initWithFrame:frame]) ) {
     _URL = URL;
@@ -46,7 +46,7 @@
 
 - (void)handleURL
 {
-  if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
+  if ([(NSObject *)self.delegate respondsToSelector:@selector(handleURL:)]) {
     [self.delegate handleURL:self.URL];
   }
 }

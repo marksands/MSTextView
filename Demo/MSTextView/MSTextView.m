@@ -54,7 +54,7 @@
   return self;
 }
 
-- (id) initWithFrame:(CGRect)frame andText:(NSString*)text
+- (id) initWithFrame:(CGRect)frame andText:(NSString *)text
 {
   if ( (self=[self initWithFrame:frame]) ) {
     _text   = [text retain];
@@ -147,25 +147,25 @@
   }
 }
 
-- (CGFloat)sizeOfHeightFromText:(NSString*)theText
+- (CGFloat)sizeOfHeightFromText:(NSString *)theText
 {
   CGSize size = [theText sizeWithFont:_font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
   return size.height;
 }
 
-- (CGFloat)sizeOfHeightFromBoldText:(NSString*)theText
+- (CGFloat)sizeOfHeightFromBoldText:(NSString *)theText
 {
   CGSize size = [theText sizeWithFont:_linkFont constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
   return size.height;
 }
 
-- (CGFloat)sizeOfWidthFromText:(NSString*)theText
+- (CGFloat)sizeOfWidthFromText:(NSString *)theText
 {
   CGSize sizeToMakeLabel = [theText sizeWithFont:_font]; 
   return sizeToMakeLabel.width;
 }
 
-- (CGFloat)sizeOfWidthFromBoldText:(NSString*)theText
+- (CGFloat)sizeOfWidthFromBoldText:(NSString *)theText
 {
   CGSize sizeToMakeLabel = [theText sizeWithFont:_linkFont]; 
   return (sizeToMakeLabel.width > 300) ? 300 : sizeToMakeLabel.width;
@@ -182,9 +182,9 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void) handleURL:(NSURL*)url
+- (void) handleURL:(NSURL *)url
 {  
-  if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
+  if ([(NSObject *)self.delegate respondsToSelector:@selector(handleURL:)]) {
     [self.delegate handleURL:url];
   }
 }
@@ -205,6 +205,7 @@
 
 - (void) dealloc {
   [_Parser release];
+  [_text release];
   [super dealloc];
 }
 

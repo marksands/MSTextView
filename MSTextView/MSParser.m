@@ -25,7 +25,7 @@
   return self;
 }
 
-- (id) initWithParseText:(NSString*)text
+- (id) initWithParseText:(NSString *)text
 {
   if ( (self=[super init]) ) {
     [self parseURLs:text];
@@ -34,7 +34,7 @@
   return self;
 }
 
-- (void)addNode:(MSNode*)node
+- (void)addNode:(MSNode *)node
 {
   if (!_root) {
     _root = [node retain];
@@ -48,7 +48,7 @@
 }
 
 // modified from three20 https://github.com/facebook/three20/blob/master/src/Three20Style/Sources/TTStyledTextParser.m#L112-155
-- (void)parseURLs:(NSString*)string
+- (void)parseURLs:(NSString *)string
 {
   NSInteger stringIndex = 0;
 
@@ -62,7 +62,7 @@
       NSArray *splitChars = [text componentsSeparatedByString:@" "];
       for ( id obj in splitChars) {
         NSString *temp = [obj stringByAppendingString:@" "];
-        MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
+        MSTextNode *node = [MSTextNode textNodeWithText:temp];
         [self addNode:node]; 
       }
 
@@ -75,7 +75,7 @@
         NSArray *splitChars = [text componentsSeparatedByString:@" "];
         for ( id obj in splitChars) {
           NSString *temp = [obj stringByAppendingString:@" "];
-          MSTextNode *node = [[[MSTextNode alloc] initWithText:temp] autorelease];
+          MSTextNode *node = [MSTextNode textNodeWithText:temp];
           [self addNode:node];             
         }
       }
@@ -86,14 +86,14 @@
                                          range:subSearchRange];      
       if (endRange.location == NSNotFound) {
         NSURL *URL = [NSURL URLWithString:[string substringWithRange:subSearchRange]];
-        MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
+        MSLinkNode *node = [MSLinkNode linkNodeWithURL:URL];
         [self addNode:node];
         break;  
       }
       else {
         NSRange URLRange = NSMakeRange(startRange.location, endRange.location - startRange.location);
         NSURL *URL = [NSURL URLWithString:[string substringWithRange:URLRange]];
-        MSLinkNode *node = [[(MSLinkNode*)[MSLinkNode alloc] initWithURL:URL] autorelease];
+        MSLinkNode *node = [MSLinkNode linkNodeWithURL:URL];
         [self addNode:node];
         stringIndex = endRange.location;
       }

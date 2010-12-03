@@ -16,6 +16,6 @@
 @property (nonatomic, assign) MSNode *parent;
 @property (nonatomic, retain) MSNode *child;
 
-- (id)initWithChild:(MSNode*)childNode;
+- (id)initWithChild:(MSNode *)childNode;
 
 @end

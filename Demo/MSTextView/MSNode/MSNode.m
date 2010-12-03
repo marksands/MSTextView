@@ -13,7 +13,7 @@
 @synthesize parent = _parent;;
 @synthesize child = _child;
 
-- (id)initWithChild:(MSNode*)childNode {
+- (id)initWithChild:(MSNode *)childNode {
   if ((self = [super init])) {
     self.child = childNode;
   }

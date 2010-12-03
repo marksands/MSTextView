@@ -12,6 +12,6 @@
 
 }
 
-- (id) initWithNextNode:(MSNode*)nextNode;
+- (id) initWithNextNode:(MSNode *)nextNode;
 
 @end
