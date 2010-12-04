@@ -15,6 +15,7 @@
 		2899E5220DE3E06400AC0155 /* MSTextViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* MSTextViewViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* MSTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */; };
+		4D2C809912AA242D00D56678 /* WBTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D2C809812AA242D00D56678 /* WBTextView.m */; };
 		4D8676B1129A237C00BA7630 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D86769D129A237C00BA7630 /* WebViewController.m */; };
 		4D8676B2129A237C00BA7630 /* MSElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A1129A237C00BA7630 /* MSElement.m */; };
 		4D8676B3129A237C00BA7630 /* MSLinkElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A3129A237C00BA7630 /* MSLinkElement.m */; };
@@ -45,6 +46,9 @@
 		28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTextViewViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MSTextView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTextView_Prefix.pch; sourceTree = "<group>"; };
+		4D02F82412AA20AA001E3A0B /* NSString+Replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Replace.h"; path = "Classes/NSString+Replace.h"; sourceTree = "<group>"; };
+		4D2C809712AA242D00D56678 /* WBTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WBTextView.h; sourceTree = "<group>"; };
+		4D2C809812AA242D00D56678 /* WBTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WBTextView.m; sourceTree = "<group>"; };
 		4D86769C129A237C00BA7630 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		4D86769D129A237C00BA7630 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		4D8676A0129A237C00BA7630 /* MSElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSElement.h; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4D02F73B12AA0820001E3A0B /* WBTextView */,
 				4D86769E129A237C00BA7630 /* MSTextView */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -153,6 +158,16 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D02F73B12AA0820001E3A0B /* WBTextView */ = {
+			isa = PBXGroup;
+			children = (
+				4D02F82412AA20AA001E3A0B /* NSString+Replace.h */,
+				4D2C809712AA242D00D56678 /* WBTextView.h */,
+				4D2C809812AA242D00D56678 /* WBTextView.m */,
+			);
+			name = WBTextView;
 			sourceTree = "<group>";
 		};
 		4D86769E129A237C00BA7630 /* MSTextView */ = {
@@ -275,6 +290,7 @@
 				4D8676B8129A237C00BA7630 /* MSParser.m in Sources */,
 				4D8676B9129A237C00BA7630 /* MSTextView.m in Sources */,
 				4DD19C3D129B7D8300B67C13 /* MSLineBreakNode.m in Sources */,
+				4D2C809912AA242D00D56678 /* WBTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

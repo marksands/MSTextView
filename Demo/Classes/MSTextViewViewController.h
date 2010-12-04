@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "MSTextView.h"
+#import "WBTextView.h"
 
-@interface MSTextViewViewController : UIViewController <MSTextViewDelegate> {
+@interface MSTextViewViewController : UIViewController <MSTextViewDelegate, WBTextViewDelegate> {
 
 }
 

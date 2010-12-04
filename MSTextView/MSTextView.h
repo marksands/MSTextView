@@ -1,52 +1,27 @@
 //
-//  MSTextView.h
-//  UITextViewLinkOptions
+//  WBTextView.h
+//  MSTextView
 //
-//  Created by Mark Sands on 11/18/10.
+//  Created by Mark Sands on 12/4/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "MSLinkElement.h"
-#import "MSTextElement.h"
-
-@class MSNode;
-@class MSParser;
-
-@protocol MSTextViewDelegate
-- (void) handleURL:(NSURL *)url;
+@protocol WBTextViewDelegate
+- (void)handleURL:(NSURL*)url;
 @end
 
 
-@interface MSTextView : UIView <MSLinkDelegate> {
+@interface WBTextView : UIView <UIWebViewDelegate> {
+  id delegate;
   NSString *_text;
-  UIFont   *_font;
-  UIFont   *_linkFont;
-  UIColor  *_textColor;
   
-  MSParser *_Parser;
-  
-  id<MSTextViewDelegate> delegate;
+  UIWebView *_aWebView;
 }
 
-@property (nonatomic, assign) id<MSTextViewDelegate> delegate;
-@property (nonatomic, retain) MSParser *Parser;
+@property (nonatomic, assign) id delegate;
+@property (retain) NSString *text;
 
-@property (nonatomic, assign) NSString *text;
-@property (nonatomic, assign) UIFont   *font;
-@property (nonatomic, assign) UIFont   *linkFont;
-@property (nonatomic, assign) UIColor  *textColor;
-
-- (id) initWithFrame:(CGRect)frame andText:(NSString *)text;
-
-- (CGFloat)sizeOfHeightFromText:(NSString *)theText;
-- (CGFloat)sizeOfHeightFromBoldText:(NSString *)theText;
-
-- (CGFloat)sizeOfWidthFromText:(NSString *)theText;
-- (CGFloat)sizeOfWidthFromBoldText:(NSString *)theText;
-
-- (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum;
-
+@property (retain) UIWebView *_aWebView;
 @end
