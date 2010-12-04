@@ -37,7 +37,6 @@
 		28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTextViewViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MSTextView_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTextView_Prefix.pch; sourceTree = "<group>"; };
-		4D2C814E12AA31ED00D56678 /* NSString+Replace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Replace.h"; sourceTree = "<group>"; };
 		4D86769C129A237C00BA7630 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		4D86769D129A237C00BA7630 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		4D8676AF129A237C00BA7630 /* MSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTextView.h; sourceTree = "<group>"; };
@@ -135,7 +134,6 @@
 		4D86769E129A237C00BA7630 /* MSTextView */ = {
 			isa = PBXGroup;
 			children = (
-				4D2C814E12AA31ED00D56678 /* NSString+Replace.h */,
 				4D8676AF129A237C00BA7630 /* MSTextView.h */,
 				4D8676B0129A237C00BA7630 /* MSTextView.m */,
 			);

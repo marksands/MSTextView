@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol WBTextViewDelegate
+@protocol MSTextViewDelegate
 - (void)handleURL:(NSURL*)url;
 @end
 
 
-@interface WBTextView : UIView <UIWebViewDelegate> {
+@interface MSTextView : UIView <UIWebViewDelegate> {
   id delegate;
   NSString *_text;
   

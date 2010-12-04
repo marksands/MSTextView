@@ -7,7 +7,6 @@
 //
 
 #import "MSTextView.h"
-#import "NSString+Replace.h"
 
 @implementation MSTextView
 

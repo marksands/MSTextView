@@ -4,7 +4,7 @@ A URL aware TextView for iOS
 
 ## Installation
 
-Just copy over `MSTextView.m` `MSTextView.h` and `NSString+Replace.h` into your project folder and you're all set.
+Just copy over `MSTextView.m` and `MSTextView.h` into your project folder and you're all set.
 
 # Using MSTextView
 
