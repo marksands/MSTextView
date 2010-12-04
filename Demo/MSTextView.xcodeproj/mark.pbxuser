@@ -23,15 +23,15 @@
 	28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1429, 735}}";
-			sepNavSelRange = "{319, 0}";
-			sepNavVisRange = "{0, 333}";
+			sepNavSelRange = "{201, 0}";
+			sepNavVisRange = "{0, 290}";
 		};
 	};
 	28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1468, 735}}";
-			sepNavSelRange = "{502, 0}";
-			sepNavVisRange = "{0, 1293}";
+			sepNavSelRange = "{497, 0}";
+			sepNavVisRange = "{0, 1017}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
@@ -190,6 +190,17 @@
 			4D2C814512AA302900D56678 /* PBXTextBookmark */ = 4D2C814512AA302900D56678 /* PBXTextBookmark */;
 			4D2C814612AA303200D56678 /* PBXTextBookmark */ = 4D2C814612AA303200D56678 /* PBXTextBookmark */;
 			4D2C814712AA306500D56678 /* PBXTextBookmark */ = 4D2C814712AA306500D56678 /* PBXTextBookmark */;
+			4D2C815112AA31FD00D56678 /* XCBuildMessageTextBookmark */ = 4D2C815112AA31FD00D56678 /* XCBuildMessageTextBookmark */;
+			4D2C815212AA31FD00D56678 /* PBXTextBookmark */ = 4D2C815212AA31FD00D56678 /* PBXTextBookmark */;
+			4D2C815512AA320C00D56678 /* PBXTextBookmark */ = 4D2C815512AA320C00D56678 /* PBXTextBookmark */;
+			4D2C815612AA320C00D56678 /* XCBuildMessageTextBookmark */ = 4D2C815612AA320C00D56678 /* XCBuildMessageTextBookmark */;
+			4D2C815712AA320C00D56678 /* PBXTextBookmark */ = 4D2C815712AA320C00D56678 /* PBXTextBookmark */;
+			4D2C816012AA323400D56678 /* PBXTextBookmark */ = 4D2C816012AA323400D56678 /* PBXTextBookmark */;
+			4D2C816112AA323400D56678 /* PBXTextBookmark */ = 4D2C816112AA323400D56678 /* PBXTextBookmark */;
+			4D2C816212AA323400D56678 /* PBXTextBookmark */ = 4D2C816212AA323400D56678 /* PBXTextBookmark */;
+			4D2C816312AA323400D56678 /* PBXTextBookmark */ = 4D2C816312AA323400D56678 /* PBXTextBookmark */;
+			4D2C816412AA323400D56678 /* PBXTextBookmark */ = 4D2C816412AA323400D56678 /* PBXTextBookmark */;
+			4D2C816512AA324700D56678 /* PBXTextBookmark */ = 4D2C816512AA324700D56678 /* PBXTextBookmark */;
 			4D51ECB512A7588600F70779 = 4D51ECB512A7588600F70779 /* PBXTextBookmark */;
 			4D8676EB129A24E100BA7630 = 4D8676EB129A24E100BA7630 /* PBXBookmark */;
 		};
@@ -399,7 +410,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
 		name = "MSTextViewViewController.h: 11";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 201;
 		rType = 0;
 		vrLen = 290;
 		vrLoc = 0;
@@ -409,9 +420,9 @@
 		fRef = 4D8676AF129A237C00BA7630 /* MSTextView.h */;
 		name = "MSTextView.h: 42";
 		rLen = 0;
-		rLoc = 924;
+		rLoc = 473;
 		rType = 0;
-		vrLen = 1209;
+		vrLen = 473;
 		vrLoc = 0;
 	};
 	4D02F7ED12AA1D60001E3A0B /* PBXTextBookmark */ = {
@@ -425,6 +436,12 @@
 		vrLoc = 0;
 	};
 	4D02F82412AA20AA001E3A0B /* NSString+Replace.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = "NSString+Replace.h";
+		path = "/Users/mark/Repositories/MSTextView/Demo/Classes/NSString+Replace.h";
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1429, 767}}";
 			sepNavSelRange = "{341, 0}";
@@ -582,6 +599,12 @@
 		vrLoc = 315;
 	};
 	4D2C809712AA242D00D56678 /* WBTextView.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = WBTextView.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/WBTextView.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1429, 735}}";
 			sepNavSelRange = "{346, 0}";
@@ -589,6 +612,12 @@
 		};
 	};
 	4D2C809812AA242D00D56678 /* WBTextView.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = WBTextView.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/WBTextView.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1429, 1248}}";
 			sepNavSelRange = "{734, 0}";
@@ -620,7 +649,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
 		name = "MSTextViewViewController.h: 11";
 		rLen = 0;
-		rLoc = 224;
+		rLoc = 201;
 		rType = 0;
 		vrLen = 290;
 		vrLoc = 0;
@@ -660,7 +689,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 24";
 		rLen = 0;
-		rLoc = 679;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1318;
 		vrLoc = 0;
@@ -670,7 +699,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 24";
 		rLen = 0;
-		rLoc = 679;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1318;
 		vrLoc = 0;
@@ -750,7 +779,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
 		name = "MSTextViewViewController.h: 13";
 		rLen = 0;
-		rLoc = 319;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 333;
 		vrLoc = 0;
@@ -770,7 +799,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 38";
 		rLen = 35;
-		rLoc = 1026;
+		rLoc = 750;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -780,7 +809,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 28";
 		rLen = 0;
-		rLoc = 840;
+		rLoc = 564;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -890,7 +919,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 30";
 		rLen = 0;
-		rLoc = 917;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -900,7 +929,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 30";
 		rLen = 0;
-		rLoc = 917;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -970,7 +999,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 30";
 		rLen = 0;
-		rLoc = 917;
+		rLoc = 641;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -980,7 +1009,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 27";
 		rLen = 0;
-		rLoc = 773;
+		rLoc = 497;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 0;
@@ -990,7 +1019,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1288;
 		vrLoc = 0;
@@ -1050,7 +1079,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 29";
 		rLen = 0;
-		rLoc = 883;
+		rLoc = 607;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -1150,7 +1179,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
 		name = "MSTextViewViewController.h: 13";
 		rLen = 0;
-		rLoc = 319;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 333;
 		vrLoc = 0;
@@ -1160,7 +1189,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1295;
 		vrLoc = 0;
@@ -1170,7 +1199,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 28";
 		rLen = 0;
-		rLoc = 776;
+		rLoc = 500;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 0;
@@ -1180,7 +1209,7 @@
 		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
 		name = "MSTextViewViewController.h: 13";
 		rLen = 0;
-		rLoc = 319;
+		rLoc = 276;
 		rType = 0;
 		vrLen = 333;
 		vrLoc = 0;
@@ -1190,7 +1219,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 0;
@@ -1320,7 +1349,7 @@
 		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
 		name = "MSTextViewViewController.m: 19";
 		rLen = 0;
-		rLoc = 502;
+		rLoc = 496;
 		rType = 0;
 		vrLen = 1293;
 		vrLoc = 0;
@@ -1374,6 +1403,114 @@
 		rType = 0;
 		vrLen = 1906;
 		vrLoc = 1079;
+	};
+	4D2C815112AA31FD00D56678 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "WBTextView.h: No such file or directory";
+		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 10;
+		rType = 1;
+	};
+	4D2C815212AA31FD00D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
+		name = "MSTextViewViewController.h: 11";
+		rLen = 0;
+		rLoc = 201;
+		rType = 0;
+		vrLen = 333;
+		vrLoc = 0;
+	};
+	4D2C815512AA320C00D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D8676B0129A237C00BA7630 /* MSTextView.m */;
+		name = "MSTextView.m: 28";
+		rLen = 0;
+		rLoc = 712;
+		rType = 0;
+		vrLen = 733;
+		vrLoc = 0;
+	};
+	4D2C815612AA320C00D56678 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Cannot find protocol declaration for 'MSTextViewDelegate'";
+		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 11;
+		rType = 1;
+	};
+	4D2C815712AA320C00D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
+		name = "MSTextViewViewController.h: 12";
+		rLen = 0;
+		rLoc = 276;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	4D2C816012AA323400D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D8676B0129A237C00BA7630 /* MSTextView.m */;
+		name = "MSTextView.m: 9";
+		rLen = 0;
+		rLoc = 150;
+		rType = 0;
+		vrLen = 1791;
+		vrLoc = 135;
+	};
+	4D2C816112AA323400D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 4D8676AF129A237C00BA7630 /* MSTextView.h */;
+		name = "MSTextView.h: 11";
+		rLen = 0;
+		rLoc = 176;
+		rType = 0;
+		vrLen = 473;
+		vrLoc = 0;
+	};
+	4D2C816212AA323400D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF60DDB3853001CB0EB /* MSTextViewViewController.h */;
+		name = "MSTextViewViewController.h: 11";
+		rLen = 0;
+		rLoc = 201;
+		rType = 0;
+		vrLen = 290;
+		vrLoc = 0;
+	};
+	4D2C816312AA323400D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
+		name = "MSTextViewViewController.m: 23";
+		rLen = 0;
+		rLoc = 496;
+		rType = 0;
+		vrLen = 1293;
+		vrLoc = 0;
+	};
+	4D2C816412AA323400D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
+		name = "MSTextViewViewController.m: 19";
+		rLen = 0;
+		rLoc = 498;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 0;
+	};
+	4D2C816512AA324700D56678 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28D7ACF70DDB3853001CB0EB /* MSTextViewViewController.m */;
+		name = "MSTextViewViewController.m: 18";
+		rLen = 0;
+		rLoc = 497;
+		rType = 0;
+		vrLen = 1017;
+		vrLoc = 0;
 	};
 	4D51ECB512A7588600F70779 /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -1442,6 +1579,12 @@
 		};
 	};
 	4D8676A0129A237C00BA7630 /* MSElement.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSElement.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSElement.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{0, 0}";
@@ -1449,6 +1592,12 @@
 		};
 	};
 	4D8676A1129A237C00BA7630 /* MSElement.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSElement.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSElement.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{0, 0}";
@@ -1456,6 +1605,12 @@
 		};
 	};
 	4D8676A2129A237C00BA7630 /* MSLinkElement.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSLinkElement.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSLinkElement.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{558, 0}";
@@ -1463,6 +1618,12 @@
 		};
 	};
 	4D8676A3129A237C00BA7630 /* MSLinkElement.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSLinkElement.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSLinkElement.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 1625}}";
 			sepNavSelRange = "{1057, 0}";
@@ -1470,6 +1631,12 @@
 		};
 	};
 	4D8676A4129A237C00BA7630 /* MSTextElement.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSTextElement.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSTextElement.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{0, 0}";
@@ -1477,6 +1644,12 @@
 		};
 	};
 	4D8676A5129A237C00BA7630 /* MSTextElement.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSTextElement.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSElement/MSTextElement.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{252, 0}";
@@ -1484,6 +1657,12 @@
 		};
 	};
 	4D8676A7129A237C00BA7630 /* MSLinkNode.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSLinkNode.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSLinkNode.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{264, 0}";
@@ -1491,6 +1670,12 @@
 		};
 	};
 	4D8676A8129A237C00BA7630 /* MSLinkNode.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSLinkNode.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSLinkNode.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 676}}";
 			sepNavSelRange = "{258, 0}";
@@ -1498,6 +1683,12 @@
 		};
 	};
 	4D8676A9129A237C00BA7630 /* MSNode.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSNode.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSNode.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{373, 0}";
@@ -1505,6 +1696,12 @@
 		};
 	};
 	4D8676AA129A237C00BA7630 /* MSNode.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSNode.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSNode.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{279, 0}";
@@ -1512,6 +1709,12 @@
 		};
 	};
 	4D8676AB129A237C00BA7630 /* MSTextNode.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSTextNode.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSTextNode.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{313, 0}";
@@ -1519,6 +1722,12 @@
 		};
 	};
 	4D8676AC129A237C00BA7630 /* MSTextNode.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSTextNode.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSTextNode.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 676}}";
 			sepNavSelRange = "{270, 0}";
@@ -1526,6 +1735,12 @@
 		};
 	};
 	4D8676AD129A237C00BA7630 /* MSParser.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSParser.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSParser.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 595}}";
 			sepNavSelRange = "{376, 0}";
@@ -1533,6 +1748,12 @@
 		};
 	};
 	4D8676AE129A237C00BA7630 /* MSParser.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSParser.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSParser.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1497, 3042}}";
 			sepNavSelRange = "{2917, 0}";
@@ -1542,17 +1763,17 @@
 	};
 	4D8676AF129A237C00BA7630 /* MSTextView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1429, 739}}";
-			sepNavSelRange = "{924, 0}";
-			sepNavVisRange = "{0, 1209}";
+			sepNavIntBoundsRect = "{{0, 0}, {1429, 735}}";
+			sepNavSelRange = "{176, 0}";
+			sepNavVisRange = "{0, 473}";
 			sepNavWindowFrame = "{{19, 103}, {1042, 770}}";
 		};
 	};
 	4D8676B0129A237C00BA7630 /* MSTextView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1429, 2769}}";
-			sepNavSelRange = "{4837, 0}";
-			sepNavVisRange = "{4199, 1099}";
+			sepNavIntBoundsRect = "{{0, 0}, {1429, 1248}}";
+			sepNavSelRange = "{150, 0}";
+			sepNavVisRange = "{135, 1791}";
 		};
 	};
 	4D8676EB129A24E100BA7630 /* PBXBookmark */ = {
@@ -1560,6 +1781,12 @@
 		fRef = 4D8676C0129A23A200BA7630 /* forward@2x.png */;
 	};
 	4DD19C3B129B7D8300B67C13 /* MSLineBreakNode.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = MSLineBreakNode.h;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSLineBreakNode.h;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{251, 0}";
@@ -1567,6 +1794,12 @@
 		};
 	};
 	4DD19C3C129B7D8300B67C13 /* MSLineBreakNode.m */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.objc;
+		name = MSLineBreakNode.m;
+		path = /Users/mark/Repositories/MSTextView/Demo/MSTextView/MSNode/MSLineBreakNode.m;
+		sourceTree = "<absolute>";
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1052, 618}}";
 			sepNavSelRange = "{250, 0}";

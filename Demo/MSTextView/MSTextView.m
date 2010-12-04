@@ -6,10 +6,10 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "WBTextView.h"
+#import "MSTextView.h"
 #import "NSString+Replace.h"
 
-@implementation WBTextView
+@implementation MSTextView
 
 @synthesize text = _text;
 @synthesize _aWebView;
