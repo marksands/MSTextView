@@ -8,9 +8,12 @@
 
 #import "MSTextView.h"
 
+#define kFont [UIFont fontWithName:@"Helvetica" size:20]
+
 @implementation MSTextView
 
 @synthesize text = _text;
+@synthesize font = _font;
 @synthesize _aWebView;
 @synthesize delegate;
 
@@ -20,10 +23,15 @@
     _aWebView = [[UIWebView alloc] initWithFrame:self.bounds];
     _aWebView.delegate = self;
     [self addSubview:_aWebView];
+    
+    _font = kFont;
+
     // this turns off scrolling in the UIWebView
     for (id subview in _aWebView.subviews)
-      if ([[subview class] isSubclassOfClass:[UIScrollView class]])
+      if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
         ((UIScrollView *)subview).bounces = NO;
+        ((UIScrollView *)subview).scrollEnabled = NO;
+      }
   }
   return self;
 }
@@ -66,20 +74,24 @@
     current = [NSMutableArray arrayWithArray:[detector matchesInString:sample options:0 range:NSMakeRange(0, sample.length)]];
     [current removeObjectsInRange:NSMakeRange(0, ( (i+1) * 2 ))];
   }
-  
+
   [sample replaceOccurrencesOfString:@"\n" withString:@"<br />" options:NSLiteralSearch range:NSMakeRange(0, sample.length)];
+  
+  NSString *fontName = [_font fontName];
+  NSString *fontSize = [NSString stringWithFormat:@"%g",[_font pointSize]];
+  NSLog(@"font: %@, size: %@",fontName, fontSize);
   
   NSString *embedHTML = @"\
   <html><head>\
   <style type=\"text/css\">\
-  body {background-color: transparent;font-family: \"Helvetica\";font-size: 20px;color: black;}\
+  body {background-color: transparent;font-family: \"%@\";font-size: %@px;color: black;}\
   a    { text-decoration:none; color:rgba(35,110,216,1); font-weight:bold;}\
   </style>\
   </head><body style=\"margin:0\">\
   %@\
   </body></html>";
-  
-  NSString *htmlString = [NSString stringWithFormat:embedHTML, sample];
+
+  NSString *htmlString = [NSString stringWithFormat:embedHTML, fontName, fontSize, sample];
 
   [_aWebView loadHTMLString:htmlString baseURL:nil];
 }
@@ -87,6 +99,7 @@
 - (void) dealloc
 {
   [_text release]; 
+  [_font release]; 
   [_aWebView release];
   [super dealloc];
 }

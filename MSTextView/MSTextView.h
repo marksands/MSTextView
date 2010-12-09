@@ -16,11 +16,13 @@
 @interface MSTextView : UIView <UIWebViewDelegate> {
   id delegate;
   NSString *_text;
+  UIFont *_font;
   
   UIWebView *_aWebView;
 }
 
 @property (nonatomic, assign) id delegate;
+@property (retain) UIFont *font;
 @property (retain) NSString *text;
 
 @property (retain) UIWebView *_aWebView;

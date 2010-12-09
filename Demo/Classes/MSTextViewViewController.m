@@ -18,6 +18,7 @@
 
   MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 300, 395)];
   textView.delegate = self;
+  textView.font = [UIFont fontWithName:@"Helvetica" size:20];
   textView.text = sample;
   [self.view addSubview:textView];
   [textView release];
