@@ -10,12 +10,23 @@
 
 #define kFont [UIFont fontWithName:@"Helvetica" size:20]
 
+@interface MSTextView (PrivateMethods)
+- (NSString *) linkRegex;
+- (CGFloat)    fontSize;
+- (NSString *) fontName;
+- (NSString *) embedHTMLWithFontName:(NSString *)fontName 
+                                size:(CGFloat)size 
+                                text:(NSString *)theText;
+@end
+
 @implementation MSTextView
 
 @synthesize text = _text;
 @synthesize font = _font;
 @synthesize _aWebView;
 @synthesize delegate;
+
+#pragma mark -
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -52,48 +63,72 @@
 
 - (void) layoutSubviews
 {
-  NSMutableString *sample = [NSMutableString stringWithString:_text];  
-  
-  NSString *linkRegex = @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
-  //NSString *hashRegex = @"[\\s]{1,}#{1}([^\\s]{2,})";
-  //NSString *userRegex = @"@{1}([-A-Za-z0-9_]{2,})";
-  
+  NSMutableString *theText = [NSMutableString stringWithString:_text];
+
   NSError *error = NULL;
-  NSRegularExpression *detector = [NSRegularExpression regularExpressionWithPattern:linkRegex options:0 error:&error];
-  NSArray *links = [detector matchesInString:sample options:0 range:NSMakeRange(0, sample.length)];
+  NSRegularExpression *detector = [NSRegularExpression regularExpressionWithPattern:[self linkRegex] options:0 error:&error];
+  NSArray *links = [detector matchesInString:theText options:0 range:NSMakeRange(0, theText.length)];
   NSMutableArray *current = [NSMutableArray arrayWithArray:links];  
  
   for ( int i = 0; i < [links count]; i++ ) {
-    
     NSTextCheckingResult *cr = [current objectAtIndex:0];
+    NSString *url = [theText substringWithRange:cr.range];
     
-    NSString *url = [sample substringWithRange:cr.range];
+    [theText replaceOccurrencesOfString:url 
+                           withString:[NSString stringWithFormat:@"<a href=\"%@\">%@</a>", url, url] 
+                              options:NSLiteralSearch 
+                                range:NSMakeRange(0, theText.length)];
     
-    [sample replaceOccurrencesOfString:url withString:[NSString stringWithFormat:@"<a href=\"%@\">%@</a>", url, url] options:NSLiteralSearch range:NSMakeRange(0, sample.length)];
-    
-    current = [NSMutableArray arrayWithArray:[detector matchesInString:sample options:0 range:NSMakeRange(0, sample.length)]];
+    current = [NSMutableArray arrayWithArray:[detector matchesInString:theText options:0 range:NSMakeRange(0, theText.length)]];
     [current removeObjectsInRange:NSMakeRange(0, ( (i+1) * 2 ))];
   }
 
-  [sample replaceOccurrencesOfString:@"\n" withString:@"<br />" options:NSLiteralSearch range:NSMakeRange(0, sample.length)];
-  
-  NSString *fontName = [_font fontName];
-  NSString *fontSize = [NSString stringWithFormat:@"%g",[_font pointSize]];
-  NSLog(@"font: %@, size: %@",fontName, fontSize);
-  
+  [theText replaceOccurrencesOfString:@"\n" withString:@"<br />" options:NSLiteralSearch range:NSMakeRange(0, theText.length)];
+
+  [_aWebView loadHTMLString:[self embedHTMLWithFontName:[self fontName] 
+                                                   size:[self fontSize] 
+                                                   text:theText]
+                    baseURL:nil];
+}
+
+#pragma mark -
+#pragma mark UIFont
+
+- (CGFloat) fontSize
+{
+  return [_font pointSize];
+}
+
+- (NSString *) fontName
+{
+  return [_font fontName];
+}
+
+#pragma mark -
+#pragma mark embedHTML
+
+- (NSString *) embedHTMLWithFontName:(NSString *)fontName 
+                                size:(CGFloat)size 
+                                text:(NSString *)theText
+{
   NSString *embedHTML = @"\
   <html><head>\
   <style type=\"text/css\">\
-  body {background-color: transparent;font-family: \"%@\";font-size: %@px;color: black;}\
+  body {background-color: transparent;font-family: \"%@\";font-size: %gpx;color: black;}\
   a    { text-decoration:none; color:rgba(35,110,216,1); font-weight:bold;}\
   </style>\
   </head><body style=\"margin:0\">\
   %@\
   </body></html>";
+  return [NSString stringWithFormat:embedHTML, fontName, size, theText];
+}
 
-  NSString *htmlString = [NSString stringWithFormat:embedHTML, fontName, fontSize, sample];
+#pragma mark -
+#pragma mark Regex
 
-  [_aWebView loadHTMLString:htmlString baseURL:nil];
+- (NSString *)linkRegex
+{
+  return @"(http|https)://((\\w)*|([0-9]*)|([-|_])*)+([\\.|/]((\\w)*|([0-9]*)|([-|_])*))+";
 }
 
 - (void) dealloc
