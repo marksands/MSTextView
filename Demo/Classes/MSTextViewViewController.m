@@ -14,7 +14,7 @@
 
 - (void) viewDidLoad
 {
-  NSString *sample = @"Follow me on twitter @marksands or check out the latest trends #Christmas #Apple on http://www.twitter.com";
+  NSString *sample = @"Follow me on twitter @marksands or check out the latest #Apple trends on http://www.twitter.com";
   
   MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 300, 395)];
   textView.delegate = self;
