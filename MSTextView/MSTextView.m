@@ -63,9 +63,7 @@
     
     return NO;
   }
-  UITableViewCell *cell;
-  cell.textLabel;
-  cell.detailTextLabel;
+
   return YES;
 }
 
@@ -118,8 +116,8 @@
 
 - (NSString*) bgColor
 {
- 	CGColorRef cgColor = _backgroundColor.CGColor;
-	const CGFloat *components = CGColorGetComponents(cgColor);
+  CGColorRef cgColor = _backgroundColor.CGColor;
+  const CGFloat *components = CGColorGetComponents(cgColor);
 
   return [NSString stringWithFormat:@"%i, %i, %i, %i", (int)(components[0]*255), (int)(components[1]*255), (int)(components[2]*255), (int)components[3]];
 }
