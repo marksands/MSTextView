@@ -17,6 +17,7 @@
   id delegate;
   NSString *_text;
   UIFont *_font;
+  UIColor *_backgroundColor;
   
   UIWebView *_aWebView;
 }
@@ -24,6 +25,7 @@
 @property (nonatomic, assign) id delegate;
 @property (retain) UIFont *font;
 @property (retain) NSString *text;
+@property (retain) UIColor *backgroundColor;
 
 @property (retain) UIWebView *_aWebView;
 @end
