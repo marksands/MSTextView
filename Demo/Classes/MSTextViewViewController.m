@@ -14,8 +14,8 @@
 
 - (void) viewDidLoad
 {
-  NSString *sample = @"Check out my GitHub page http://github.com/marksands or go to http://google.com instead. \n\nOptionally, try out a news site such as http://yahoo.com or http://cnn.com for great good!";
-
+  NSString *sample = @"Follow me on twitter @marksands or check out the latest trends #Christmas #Apple on http://www.twitter.com";
+  
   MSTextView *textView = [[MSTextView alloc] initWithFrame:CGRectMake(10, 10, 300, 395)];
   textView.delegate = self;
   textView.font = [UIFont fontWithName:@"Helvetica" size:20];
