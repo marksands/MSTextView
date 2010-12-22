@@ -134,7 +134,7 @@
   NSString *embedHTML = @"\
   <html><head>\
   <style type=\"text/css\">\
-  body {background-color: rgba(%@);font-family: \"%@\";font-size: %gpx;color: black;}\
+  body {background-color: rgba(%@);font-family: \"%@\";font-size: %gpx;color: black; word-wrap: break-word;}\
   a    { text-decoration:none; color:rgba(35,110,216,1); font-weight:bold;}\
   </style>\
   </head><body style=\"margin:0\">\
