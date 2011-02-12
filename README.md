@@ -8,7 +8,7 @@ Just copy over `MSTextView.m` and `MSTextView.h` into your project folder and yo
 
 # Using MSTextView
 
-This is an early release, so be aware of bugs. I designed this to be a drop-in replacement of UITextView for each view that you wanted to have link aware.
+This is an early release, so be aware of bugs. I designed this to be a drop-in replacement for UITextView to use with each view that you want to have clickable links. Note that unless there is any objection, I have recently changed MSTextView to automatically resize to fit its content size.
 
 Make sure to include the header file `"MSTextView.h"` and use the protocol `<MSTextViewDelegate>` which is necessary for responding to your code when the user selects a link. The sample project has everything you need to get you started, or check out the code below.
 
