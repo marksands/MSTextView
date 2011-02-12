@@ -9,13 +9,11 @@
 #import "MSTextView.h"
 
 #define kFont [UIFont fontWithName:@"Helvetica" size:20]
-#define kBackgroundColor [UIColor clearColor]
 
 @interface MSTextView (PrivateMethods)
 - (NSString *) linkRegex;
 - (CGFloat)    fontSize;
 - (NSString *) fontName;
-- (NSString *) bgColor;
 - (NSString *) embedHTMLWithFontName:(NSString *)fontName 
                                 size:(CGFloat)size 
                                 text:(NSString *)theText;
@@ -25,7 +23,6 @@
 
 @synthesize text = _text;
 @synthesize font = _font;
-@synthesize backgroundColor = _backgroundColor;
 @synthesize _aWebView;
 @synthesize delegate;
 
@@ -36,18 +33,26 @@
 {
   if ( (self = [super initWithFrame:frame]) ) {
     _aWebView = [[UIWebView alloc] initWithFrame:self.bounds];
+    _aWebView.opaque = NO;
+    _aWebView.backgroundColor = [UIColor clearColor];
     _aWebView.delegate = self;
     [self addSubview:_aWebView];
-    
-    _font = kFont;
-    _backgroundColor = kBackgroundColor;
 
-    // this turns off scrolling in the UIWebView
+    _font = kFont;
+
     for (id subview in _aWebView.subviews)
+    {      
+      // turn off scrolling in UIWebView
       if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
         ((UIScrollView *)subview).bounces = NO;
         ((UIScrollView *)subview).scrollEnabled = NO;
       }
+
+      // make UIWebView transparent
+      if ([subview isKindOfClass:[UIImageView class]])
+        ((UIImageView *)subview).hidden = YES;
+    }
+
   }
 
   return self;
@@ -124,16 +129,6 @@
 }
 
 #pragma mark -
-
-- (NSString*) bgColor
-{
-  CGColorRef cgColor = _backgroundColor.CGColor;
-  const CGFloat *components = CGColorGetComponents(cgColor);
-
-  return [NSString stringWithFormat:@"%i, %i, %i, %i", (int)(components[0]*255), (int)(components[1]*255), (int)(components[2]*255), (int)components[3]];
-}
-
-#pragma mark -
 #pragma mark embedHTML
 
 - (NSString *) embedHTMLWithFontName:(NSString *)fontName 
@@ -143,13 +138,13 @@
   NSString *embedHTML = @"\
   <html><head>\
   <style type=\"text/css\">\
-  body {background-color: rgba(%@);font-family: \"%@\";font-size: %gpx;color: black; word-wrap: break-word;}\
+  body { background-color:transparent;font-family: \"%@\";font-size: %gpx;color: black; word-wrap: break-word;}\
   a    { text-decoration:none; color:rgba(35,110,216,1); font-weight:bold;}\
   </style>\
   </head><body style=\"margin:0\">\
   %@\
   </body></html>";
-  return [NSString stringWithFormat:embedHTML, [self bgColor], fontName, size, theText];
+  return [NSString stringWithFormat:embedHTML, fontName, size, theText];
 }
 
 #pragma mark -
