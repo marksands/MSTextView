@@ -81,6 +81,9 @@
   CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
   frame.size = fittingSize;
   webView.frame = frame;
+
+  if (self.frame.size.height < webView.frame.size.height)
+    self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, webView.frame.size.height);
 }
 
 #pragma mark -
