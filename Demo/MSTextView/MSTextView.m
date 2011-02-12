@@ -25,7 +25,7 @@
 
 @synthesize text = _text;
 @synthesize font = _font;
-@synthesize backgroundColor =_backgroundColor;
+@synthesize backgroundColor = _backgroundColor;
 @synthesize _aWebView;
 @synthesize delegate;
 
@@ -65,6 +65,17 @@
   }
 
   return YES;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+  CGRect frame = webView.frame;
+  frame.size.height = 1;
+  webView.frame = frame;
+
+  CGSize fittingSize = [webView sizeThatFits:CGSizeZero];
+  frame.size = fittingSize;
+  webView.frame = frame;
 }
 
 #pragma mark -
