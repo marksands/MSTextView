@@ -46,7 +46,7 @@
 
 - (void)handleURL
 {
-  if ([(NSObject *)self.delegate respondsToSelector:@selector(handleURL:)]) {
+  if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleURL:)]) {
     [self.delegate handleURL:self.URL];
   }
 }

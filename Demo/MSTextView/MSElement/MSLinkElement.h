@@ -8,7 +8,7 @@
 
 #import "MSElement.h"
 
-@protocol MSLinkDelegate
+@protocol MSLinkDelegate <NSObject>
 - (void) handleURL:(NSURL *)url;
 @end
 

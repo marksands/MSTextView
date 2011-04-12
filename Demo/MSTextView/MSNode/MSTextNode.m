@@ -14,7 +14,7 @@
 
 + (id) textNodeWithText:(NSString *)text
 {
-  if ( (self = [[[MSTextNode alloc] initWithText:text next:nil] autorelease]) ){
+  if ((self = [[[MSTextNode alloc] initWithText:text next:nil] autorelease])) {
   }
   
   return self;
@@ -22,7 +22,7 @@
 
 - (id) initWithText:(NSString *)text
 {
-  if ( (self = [self initWithText:text next:nil]) ){
+  if ((self = [self initWithText:text next:nil])) {
   }
   
   return self;
@@ -30,7 +30,7 @@
 
 - (id) initWithText:(NSString *)text next:(MSNode*)nextNode
 {
-  if ( (self = [super init]) ){
+  if ((self = [super init])) {
     self.Text = text;
     self.child = nextNode;
   }
@@ -38,7 +38,7 @@
   return self;
 }
 
-- (NSString*)description {
+- (NSString*) description {
   return self.Text; 
 }
 

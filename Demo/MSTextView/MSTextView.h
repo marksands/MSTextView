@@ -10,12 +10,11 @@
 #import <UIKit/UIKit.h>
 
 #import "MSLinkElement.h"
-#import "MSTextElement.h"
 
 @class MSNode;
 @class MSParser;
 
-@protocol MSTextViewDelegate
+@protocol MSTextViewDelegate <NSObject>
 - (void) handleURL:(NSURL *)url;
 @end
 

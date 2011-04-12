@@ -14,7 +14,7 @@
 
 + (id) linkNodeWithURL:(NSURL *)url
 {
-  if ( (self = [[[MSLinkNode alloc] initWithURL:url next:nil] autorelease]) ){
+  if ((self = [[[MSLinkNode alloc] initWithURL:url next:nil] autorelease])) {
   }
 
   return self;
@@ -22,7 +22,7 @@
 
 - (id) initWithURL:(NSURL *)url
 {
-  if ( (self = [self initWithURL:url next:nil]) ){
+  if ((self = [self initWithURL:url next:nil])) {
   }
   
   return self;
@@ -30,7 +30,7 @@
 
 - (id) initWithURL:(NSURL *)url next:(MSNode*)nextNode
 {
-  if ( (self = [super init]) ){
+  if ((self = [super init])) {
     self.URL = url;
     self.child = nextNode;
   }
@@ -38,7 +38,7 @@
   return self;
 }
 
-- (NSString*)description {
+- (NSString*) description {
   return [NSString stringWithFormat:@"%@",self.URL];
 }
 

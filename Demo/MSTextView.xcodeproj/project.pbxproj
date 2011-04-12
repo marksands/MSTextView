@@ -18,7 +18,6 @@
 		4D8676B1129A237C00BA7630 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D86769D129A237C00BA7630 /* WebViewController.m */; };
 		4D8676B2129A237C00BA7630 /* MSElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A1129A237C00BA7630 /* MSElement.m */; };
 		4D8676B3129A237C00BA7630 /* MSLinkElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A3129A237C00BA7630 /* MSLinkElement.m */; };
-		4D8676B4129A237C00BA7630 /* MSTextElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A5129A237C00BA7630 /* MSTextElement.m */; };
 		4D8676B5129A237C00BA7630 /* MSLinkNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676A8129A237C00BA7630 /* MSLinkNode.m */; };
 		4D8676B6129A237C00BA7630 /* MSNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676AA129A237C00BA7630 /* MSNode.m */; };
 		4D8676B7129A237C00BA7630 /* MSTextNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D8676AC129A237C00BA7630 /* MSTextNode.m */; };
@@ -51,8 +50,6 @@
 		4D8676A1129A237C00BA7630 /* MSElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSElement.m; sourceTree = "<group>"; };
 		4D8676A2129A237C00BA7630 /* MSLinkElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLinkElement.h; sourceTree = "<group>"; };
 		4D8676A3129A237C00BA7630 /* MSLinkElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLinkElement.m; sourceTree = "<group>"; };
-		4D8676A4129A237C00BA7630 /* MSTextElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTextElement.h; sourceTree = "<group>"; };
-		4D8676A5129A237C00BA7630 /* MSTextElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTextElement.m; sourceTree = "<group>"; };
 		4D8676A7129A237C00BA7630 /* MSLinkNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSLinkNode.h; sourceTree = "<group>"; };
 		4D8676A8129A237C00BA7630 /* MSLinkNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSLinkNode.m; sourceTree = "<group>"; };
 		4D8676A9129A237C00BA7630 /* MSNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSNode.h; sourceTree = "<group>"; };
@@ -175,8 +172,6 @@
 				4D8676A1129A237C00BA7630 /* MSElement.m */,
 				4D8676A2129A237C00BA7630 /* MSLinkElement.h */,
 				4D8676A3129A237C00BA7630 /* MSLinkElement.m */,
-				4D8676A4129A237C00BA7630 /* MSTextElement.h */,
-				4D8676A5129A237C00BA7630 /* MSTextElement.m */,
 			);
 			path = MSElement;
 			sourceTree = "<group>";
@@ -268,7 +263,6 @@
 				4D8676B1129A237C00BA7630 /* WebViewController.m in Sources */,
 				4D8676B2129A237C00BA7630 /* MSElement.m in Sources */,
 				4D8676B3129A237C00BA7630 /* MSLinkElement.m in Sources */,
-				4D8676B4129A237C00BA7630 /* MSTextElement.m in Sources */,
 				4D8676B5129A237C00BA7630 /* MSLinkNode.m in Sources */,
 				4D8676B6129A237C00BA7630 /* MSNode.m in Sources */,
 				4D8676B7129A237C00BA7630 /* MSTextNode.m in Sources */,
