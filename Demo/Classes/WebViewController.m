@@ -32,7 +32,6 @@ typedef enum {
 
     toolbar           = [UIToolbar new];
     toolbar.barStyle  = UIBarStyleDefault;
-    toolbar.tintColor = [UIColor lightGrayColor];
 
     [toolbar sizeToFit];
     CGFloat toolbarHeight = [toolbar frame].size.height;
