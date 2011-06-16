@@ -182,10 +182,10 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void) handleURL:(NSURL *)url
+- (void) didSelectURL:(NSURL *)url
 {  
-  if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleURL:)]) {
-    [self.delegate handleURL:url];
+  if (self.delegate != nil && [self.delegate respondsToSelector:@selector(didSelectURL:)]) {
+    [self.delegate didSelectURL:url];
   }
 }
 

@@ -9,8 +9,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MSLinkElement.h"
 
+#define RGBAColor(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:255.0 alpha:a];
+#define RGBColor(r,g,b) RGBAColor(r,g,b,1)
 
-#define kHighlightColor [UIColor colorWithRed:172.0/255.0 green:200.0/255.0 blue:236.0/255.0 alpha:0.25];
+#define kHighlightColor RGBAColor(172.0,200.0,236.0,0.25)
 
 #define kScreenViewFrame CGRectMake(self.bounds.origin.x-1, self.bounds.origin.y-2, self.bounds.size.width+2, self.bounds.size.height+4)
 
@@ -18,7 +20,7 @@
 
 @synthesize URL = _URL;
 @synthesize delegate;
-@synthesize _screenView;
+@synthesize screenView = _screenView;
 
 - (id) initWithFrame:(CGRect)frame
 {
@@ -44,10 +46,10 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void)handleURL
+- (void)didSelectURL
 {
-  if (self.delegate != nil && [self.delegate respondsToSelector:@selector(handleURL:)]) {
-    [self.delegate handleURL:self.URL];
+  if (self.delegate != nil && [self.delegate respondsToSelector:@selector(didSelectURL:)]) {
+    [self.delegate didSelectURL:self.URL];
   }
 }
 
@@ -65,7 +67,7 @@
   
   UITouch *touch = [touches anyObject];
   if ([self pointInside:[touch locationInView:self] withEvent:event]) {
-    [self handleURL];
+    [self didSelectURL];
   }
 }
 
@@ -75,25 +77,25 @@
 
   if (highlighted) {
     if (!_screenView) {
-      _screenView = [[UIView alloc] initWithFrame:kScreenViewFrame];
-      _screenView.backgroundColor = kHighlightColor;
-      _screenView.userInteractionEnabled = NO;
+      self.screenView = [[UIView alloc] initWithFrame:kScreenViewFrame];
+      self.screenView.backgroundColor = kHighlightColor;
+      self.screenView.userInteractionEnabled = NO;
       
       CALayer *round = [_screenView layer];
       round.masksToBounds = YES;
       round.cornerRadius = 2.0;
       round.borderWidth = 0.0;
       
-      [self addSubview:_screenView];
+      [self addSubview:self.screenView];
     }
 
-    _screenView.frame = kScreenViewFrame;
-    _screenView.hidden = NO;
+    self.screenView.frame = kScreenViewFrame;
+    self.screenView.hidden = NO;
     
   } else {
-    _screenView.hidden = YES;
-    [_screenView release];
-    _screenView = nil;
+    self.screenView.hidden = YES;
+    [self.screenView release];
+    self.screenView = nil;
   }
 
 }
