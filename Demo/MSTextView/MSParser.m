@@ -18,16 +18,16 @@
 
 @synthesize root = _root;
 
-- (id) init
+- (id)init
 {
-  if ( (self = [super init]) ) {
+  if ((self = [super init])) {
   }
   return self;
 }
 
-- (id) initWithParseText:(NSString *)text
+- (id)initWithParseText:(NSString *)text
 {
-  if ( (self=[super init]) ) {
+  if ((self=[super init])) {
     [self parseURLs:text];
   }
 
@@ -104,7 +104,7 @@
   [self cleanWhiteSpace];
 }
 
-- (void) cleanWhiteSpace
+- (void)cleanWhiteSpace
 {
   MSNode *cur = _root;
   while ( cur != nil ) {
@@ -122,7 +122,7 @@
   }
 }
 
-- (void) splitNodesOnLineBreak
+- (void)splitNodesOnLineBreak
 {
   MSNode *cur = _root;
   while ( cur != nil )
@@ -225,7 +225,7 @@
   }
 }
 
-- (void) dealloc
+- (void)dealloc
 {
   [_root release];
   [super dealloc];

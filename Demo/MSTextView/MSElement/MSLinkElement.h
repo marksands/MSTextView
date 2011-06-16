@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSURL *URL;
 @property (nonatomic, retain) UIView *screenView;
 
-- (id) initWithFrame:(CGRect)frame andURL:(NSURL *)URL;
+- (id)initWithFrame:(CGRect)frame andURL:(NSURL *)URL;
 - (void)didSelectURL;
 
 @end

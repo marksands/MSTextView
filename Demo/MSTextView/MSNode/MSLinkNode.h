@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) NSURL *URL;
 
-+ (id) linkNodeWithURL:(NSURL *)url;
++ (id)linkNodeWithURL:(NSURL *)url;
 
-- (id) initWithURL:(NSURL *)url;
-- (id) initWithURL:(NSURL *)url next:(MSNode *)nextNode;
+- (id)initWithURL:(NSURL *)url;
+- (id)initWithURL:(NSURL *)url next:(MSNode *)nextNode;
 
 @end

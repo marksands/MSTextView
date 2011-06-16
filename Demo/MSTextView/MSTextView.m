@@ -30,7 +30,7 @@
 
 @synthesize delegate;
 
-- (id) init
+- (id)init
 {
   if ( (self=[super init]) ) {
     self.backgroundColor = [UIColor clearColor];
@@ -42,7 +42,7 @@
   return self;
 }
 
-- (id) initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
   if ( (self=[super initWithFrame:frame]) ) {
     self.backgroundColor = [UIColor clearColor];
@@ -54,7 +54,7 @@
   return self;
 }
 
-- (id) initWithFrame:(CGRect)frame andText:(NSString *)text
+- (id)initWithFrame:(CGRect)frame andText:(NSString *)text
 {
   if ( (self=[self initWithFrame:frame]) ) {
     _text   = [text retain];
@@ -64,7 +64,7 @@
   return self;
 }
 
-- (void) setText:(NSString *)txt
+- (void)setText:(NSString *)txt
 {
   _text = [txt retain];
   if (!_Parser) {
@@ -75,7 +75,7 @@
 #pragma mark -
 #pragma mark UILabel
 
-- (void) layoutSubviews
+- (void)layoutSubviews
 {
   CGFloat curY = self.bounds.origin.y;
   CGFloat curX = self.bounds.origin.x;
@@ -182,7 +182,7 @@
 #pragma mark -
 #pragma mark Delegate
 
-- (void) didSelectURL:(NSURL *)url
+- (void)didSelectURL:(NSURL *)url
 {  
   if (self.delegate != nil && [self.delegate respondsToSelector:@selector(didSelectURL:)]) {
     [self.delegate didSelectURL:url];

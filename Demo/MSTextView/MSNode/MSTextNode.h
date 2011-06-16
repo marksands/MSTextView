@@ -14,9 +14,9 @@
 
 @property (nonatomic, retain) NSString *Text;
 
-+ (id) textNodeWithText:(NSString *)text;
++ (id)textNodeWithText:(NSString *)text;
 
-- (id) initWithText:(NSString *)text;
-- (id) initWithText:(NSString *)text next:(MSNode*)nextNode;
+- (id)initWithText:(NSString *)text;
+- (id)initWithText:(NSString *)text next:(MSNode*)nextNode;
 
 @end

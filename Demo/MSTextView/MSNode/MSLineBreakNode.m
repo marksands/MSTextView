@@ -10,9 +10,9 @@
 
 @implementation MSLineBreakNode
 
-- (id) initWithNextNode:(MSNode *)nextNode
+- (id)initWithNextNode:(MSNode *)nextNode
 {
-  if ( (self = [super init]) ){
+  if ((self = [super init])){
     self.child = nextNode;
   }
   

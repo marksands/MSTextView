@@ -12,7 +12,7 @@
 
 @synthesize Text = _Text;
 
-+ (id) textNodeWithText:(NSString *)text
++ (id)textNodeWithText:(NSString *)text
 {
   if ((self = [[[MSTextNode alloc] initWithText:text next:nil] autorelease])) {
   }
@@ -20,7 +20,7 @@
   return self;
 }
 
-- (id) initWithText:(NSString *)text
+- (id)initWithText:(NSString *)text
 {
   if ((self = [self initWithText:text next:nil])) {
   }
@@ -28,7 +28,7 @@
   return self;
 }
 
-- (id) initWithText:(NSString *)text next:(MSNode*)nextNode
+- (id)initWithText:(NSString *)text next:(MSNode*)nextNode
 {
   if ((self = [super init])) {
     self.Text = text;
@@ -38,11 +38,11 @@
   return self;
 }
 
-- (NSString*) description {
+- (NSString*)description {
   return self.Text; 
 }
 
-- (void) dealloc
+- (void)dealloc
 {
   [_Text release];
   [super dealloc];

@@ -38,7 +38,7 @@
 @property (nonatomic, assign) UIFont   *linkFont;
 @property (nonatomic, assign) UIColor  *textColor;
 
-- (id) initWithFrame:(CGRect)frame andText:(NSString *)text;
+- (id)initWithFrame:(CGRect)frame andText:(NSString *)text;
 
 - (CGFloat)sizeOfHeightFromText:(NSString *)theText;
 - (CGFloat)sizeOfHeightFromBoldText:(NSString *)theText;

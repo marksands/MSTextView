@@ -12,7 +12,7 @@
 
 @synthesize URL = _URL;
 
-+ (id) linkNodeWithURL:(NSURL *)url
++ (id)linkNodeWithURL:(NSURL *)url
 {
   if ((self = [[[MSLinkNode alloc] initWithURL:url next:nil] autorelease])) {
   }
@@ -20,7 +20,7 @@
   return self;
 }
 
-- (id) initWithURL:(NSURL *)url
+- (id)initWithURL:(NSURL *)url
 {
   if ((self = [self initWithURL:url next:nil])) {
   }
@@ -28,7 +28,7 @@
   return self;
 }
 
-- (id) initWithURL:(NSURL *)url next:(MSNode*)nextNode
+- (id)initWithURL:(NSURL *)url next:(MSNode*)nextNode
 {
   if ((self = [super init])) {
     self.URL = url;
@@ -38,11 +38,11 @@
   return self;
 }
 
-- (NSString*) description {
+- (NSString*)description {
   return [NSString stringWithFormat:@"%@",self.URL];
 }
 
-- (void) dealloc
+- (void)dealloc
 {
   [_URL release];
   [super dealloc];
