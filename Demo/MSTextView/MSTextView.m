@@ -30,13 +30,16 @@
 
 @synthesize delegate;
 
+#pragma mark -
+#pragma mark init
+
 - (id)init
 {
   if ( (self=[super init]) ) {
     self.backgroundColor = [UIColor clearColor];
-    _font = kDefaultFont;
-    _linkFont = kLinkFont;
-    _textColor = kDefaultTextColor;
+    self.font = kDefaultFont;
+    self.linkFont = kLinkFont;
+    self.textColor = kDefaultTextColor;
   }
 
   return self;
@@ -46,9 +49,9 @@
 {
   if ( (self=[super initWithFrame:frame]) ) {
     self.backgroundColor = [UIColor clearColor];
-    _font = kDefaultFont;
-    _linkFont = kLinkFont;
-    _textColor = kDefaultTextColor;
+    self.font = kDefaultFont;
+    self.linkFont = kLinkFont;
+    self.textColor = kDefaultTextColor;
   }
 
   return self;
@@ -58,17 +61,19 @@
 {
   if ( (self=[self initWithFrame:frame]) ) {
     _text   = [text retain];
-    _Parser = [[MSParser alloc] initWithParseText:_text];    
+    self.Parser = [[MSParser alloc] initWithParseText:_text];    
   }
 
   return self;
 }
 
+#pragma mark -
+
 - (void)setText:(NSString *)txt
 {
   _text = [txt retain];
   if (!_Parser) {
-    _Parser = [[MSParser alloc] initWithParseText:_text];    
+    self.Parser = [[MSParser alloc] initWithParseText:_text];    
   }
 }
 
@@ -94,7 +99,7 @@
       lbl.textColor = self.textColor;
 
       CGFloat tempSum = curX + [self sizeOfWidthFromText:lbl.text];
-      if ([self nodesExceedFrameWidthForSum:tempSum]) {
+      if ([self nodesDoExceedFrameWidthForSum:tempSum]) {
         curY += localHeight;
         localHeight = [self sizeOfHeightFromText:lbl.text];
         curX = self.bounds.origin.x;
@@ -114,7 +119,7 @@
       lbl.textColor = kLinkColor;
 
       CGFloat tempSum = curX + [self sizeOfWidthFromBoldText:lbl.text];
-      if ([self nodesExceedFrameWidthForSum:tempSum]) {
+      if ([self nodesDoExceedFrameWidthForSum:tempSum]) {
         curY += localHeight;
         localHeight = [self sizeOfHeightFromBoldText:lbl.text];
         curX = self.bounds.origin.x;
@@ -147,6 +152,9 @@
   }
 }
 
+#pragma mark -
+#pragma mark Size
+
 - (CGFloat)sizeOfHeightFromText:(NSString *)theText
 {
   CGSize size = [theText sizeWithFont:_font constrainedToSize:CGSizeMake(300, MAXFLOAT) lineBreakMode:UILineBreakModeCharacterWrap];
@@ -171,7 +179,7 @@
   return (sizeToMakeLabel.width > 300) ? 300 : sizeToMakeLabel.width;
 }
 
-- (BOOL)nodesExceedFrameWidthForSum:(CGFloat)sum
+- (BOOL)nodesDoExceedFrameWidthForSum:(CGFloat)sum
 {
   if (sum >= self.bounds.size.width)
     return YES;
