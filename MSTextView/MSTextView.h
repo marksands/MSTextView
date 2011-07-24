@@ -3,7 +3,7 @@
 //  MSTextView
 //
 //  Created by Mark Sands on 12/4/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Mark Sands. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -14,16 +14,16 @@
 
 
 @interface MSTextView : UIView <UIWebViewDelegate> {
-  id delegate;
+  id<MSTextViewDelegate> delegate;
   NSString *_text;
   UIFont *_font;
-  
   UIWebView *_aWebView;
 }
 
-@property (nonatomic, assign) id delegate;
-@property (retain) UIFont *font;
-@property (retain) NSString *text;
+@property (nonatomic, assign) id<MSTextViewDelegate> delegate;
 
-@property (retain) UIWebView *_aWebView;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) UIWebView *aWebView;
+
 @end

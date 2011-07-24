@@ -2,7 +2,7 @@
 //  WebViewController.m
 //
 //  Created by Mark Sands on 7/19/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Mark Sands. All rights reserved.
 //
 #import "WebViewController.h"
 
@@ -155,7 +155,7 @@ typedef enum {
   if (button == BUTTON_STOP) {
     UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
     [activityView startAnimating];
-    newItem = [[UIBarButtonItem alloc] initWithCustomView:activityView];
+    newItem = [[[UIBarButtonItem alloc] initWithCustomView:activityView] autorelease];
     [activityView release];
   }
   else {

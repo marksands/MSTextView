@@ -3,7 +3,7 @@
 //  MSTextView
 //
 //  Created by Mark Sands on 11/21/10.
-//  Copyright __MyCompanyName__ 2010. All rights reserved.
+//  Copyright Mark Sands 2010. All rights reserved.
 //
 
 #import "MSTextViewViewController.h"

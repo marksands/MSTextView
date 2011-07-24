@@ -3,7 +3,7 @@
 //  MSTextView
 //
 //  Created by Mark Sands on 12/4/10.
-//  Copyright 2010 __MyCompanyName__. All rights reserved.
+//  Copyright 2010 Mark Sands. All rights reserved.
 //
 
 #import "MSTextView.h"
@@ -23,7 +23,7 @@
 
 @synthesize text = _text;
 @synthesize font = _font;
-@synthesize _aWebView;
+@synthesize aWebView = _aWebView;
 @synthesize delegate;
 
 #pragma mark -
@@ -31,16 +31,17 @@
 
 - (id) initWithFrame:(CGRect)frame
 {
-  if ( (self = [super initWithFrame:frame]) ) {
-    _aWebView = [[UIWebView alloc] initWithFrame:self.bounds];
-    _aWebView.opaque = NO;
-    _aWebView.backgroundColor = [UIColor clearColor];
-    _aWebView.delegate = self;
-    [self addSubview:_aWebView];
+  if ((self = [super initWithFrame:frame]))
+  {
+    self.aWebView = [[UIWebView alloc] initWithFrame:self.bounds];
+    self.aWebView.opaque = NO;
+    self.aWebView.backgroundColor = [UIColor clearColor];
+    self.aWebView.delegate = self;
+    [self addSubview:self.aWebView];
 
-    _font = kFont;
+    self.font = kFont;
 
-    for (id subview in _aWebView.subviews)
+    for (id subview in self.aWebView.subviews)
     {
         // turn off scrolling in UIWebView
       if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
@@ -111,7 +112,7 @@
 
   [theText replaceOccurrencesOfString:@"\n" withString:@"<br />" options:NSLiteralSearch range:NSMakeRange(0, theText.length)];
 
-  [_aWebView loadHTMLString:[self embedHTMLWithFontName:[self fontName] 
+  [self.aWebView loadHTMLString:[self embedHTMLWithFontName:[self fontName] 
                                                    size:[self fontSize] 
                                                    text:theText]
                     baseURL:nil];
