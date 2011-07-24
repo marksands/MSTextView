@@ -27,7 +27,8 @@
 #pragma mark -
 #pragma mark MSTextViewDelegate
 
-- (void) handleURL:(NSURL*)url {  
+- (void) handleURL:(NSURL*)url
+{
   WebViewController *webview = [[WebViewController alloc] initWithURL:url];
   [self.navigationController pushViewController:webview animated:YES];
   [webview release];

@@ -41,18 +41,17 @@
     _font = kFont;
 
     for (id subview in _aWebView.subviews)
-    {      
-      // turn off scrolling in UIWebView
+    {
+        // turn off scrolling in UIWebView
       if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
         ((UIScrollView *)subview).bounces = NO;
         ((UIScrollView *)subview).scrollEnabled = NO;
       }
 
-      // make UIWebView transparent
+        // make UIWebView transparent
       if ([subview isKindOfClass:[UIImageView class]])
         ((UIImageView *)subview).hidden = YES;
     }
-
   }
 
   return self;
