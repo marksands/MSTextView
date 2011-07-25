@@ -84,6 +84,11 @@
 
   if (self.frame.size.height < webView.frame.size.height)
     self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, webView.frame.size.height);
+  
+  if ([(NSObject*)self.delegate respondsToSelector:@selector(textViewDidAdjustHeight:)]) {
+    [self.delegate textViewDidAdjustHeight:self];
+  }
+  
 }
 
 #pragma mark -
