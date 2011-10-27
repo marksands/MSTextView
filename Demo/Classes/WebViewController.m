@@ -39,7 +39,7 @@ typedef enum {
     [toolbar setFrame:CGRectMake(CGRectGetMinX(mainViewBounds),
                                  CGRectGetMinY(mainViewBounds) + CGRectGetHeight(mainViewBounds) - (toolbarHeight * 2.0) + 2.0,
                                  CGRectGetWidth(mainViewBounds),
-                                 toolbarHeight)];		
+                                 toolbarHeight)];
 
     webView                 = [[UIWebView alloc] initWithFrame:CGRectMake(0, 0, 320, 380)];
     webView.delegate        = self;
@@ -50,14 +50,14 @@ typedef enum {
     [self.view addSubview:webView];
     [self.view addSubview:toolbar];
 
-    
+
     UIBarButtonItem *flexItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-    
-    NSArray *items = [NSArray arrayWithObjects: flexItem, backButton, flexItem, flexItem, flexItem, forwardButton, 
+
+    NSArray *items = [NSArray arrayWithObjects: flexItem, backButton, flexItem, flexItem, flexItem, forwardButton,
                                                 flexItem, flexItem, flexItem, flexItem, flexItem, flexItem,
                                                 actionButton, flexItem, flexItem, flexItem, actionButton, flexItem, nil];
     [self.toolbar setItems:items animated:NO];
-    
+
     [webView loadRequest:[NSURLRequest requestWithURL:url]];
   }
   return self;
@@ -115,7 +115,7 @@ typedef enum {
 {
   if (as.cancelButtonIndex == buttonIndex) return;
 
-  if (buttonIndex == 0) {        
+  if (buttonIndex == 0) {
     [[UIApplication sharedApplication] openURL:self.url];
   }
 }
@@ -144,7 +144,7 @@ typedef enum {
 
 - (void)webView:(UIWebView *)aWebView didFailLoadWithError:(NSError *)error
 {
-  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;	
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 -(void)updateToolbar:(ToolbarButton)button
