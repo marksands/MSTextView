@@ -36,7 +36,7 @@ Make sure to include the header file `"MSTextView.h"` and use the protocol `<MST
 ![http://img.skitch.com/20101202-98jtrsq1ptxifantqrm7grha.png](http://img.skitch.com/20101202-98jtrsq1ptxifantqrm7grha.png)
 ![http://img.skitch.com/20101202-8i6ktqke26uh1yfaeb1j284typ.png](http://img.skitch.com/20101202-8i6ktqke26uh1yfaeb1j284typ.png)
 
-# License 
+# License
 
 Copyright (c) 2010 Mark Sands
 

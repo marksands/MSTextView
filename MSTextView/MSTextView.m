@@ -14,8 +14,8 @@
 - (NSString *) linkRegex;
 - (CGFloat)    fontSize;
 - (NSString *) fontName;
-- (NSString *) embedHTMLWithFontName:(NSString *)fontName 
-                                size:(CGFloat)size 
+- (NSString *) embedHTMLWithFontName:(NSString *)fontName
+                                size:(CGFloat)size
                                 text:(NSString *)theText;
 @end
 
@@ -65,7 +65,7 @@
     if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
       [self.delegate handleURL:request.URL];
     }
-    
+
     return NO;
   }
 
@@ -95,25 +95,25 @@
   NSError *error = NULL;
   NSRegularExpression *detector = [NSRegularExpression regularExpressionWithPattern:[self linkRegex] options:0 error:&error];
   NSArray *links = [detector matchesInString:theText options:0 range:NSMakeRange(0, theText.length)];
-  NSMutableArray *current = [NSMutableArray arrayWithArray:links];  
- 
+  NSMutableArray *current = [NSMutableArray arrayWithArray:links];
+
   for ( int i = 0; i < [links count]; i++ ) {
     NSTextCheckingResult *cr = [current objectAtIndex:0];
     NSString *url = [theText substringWithRange:cr.range];
-    
-    [theText replaceOccurrencesOfString:url 
-                           withString:[NSString stringWithFormat:@"<a href=\"%@\">%@</a>", url, url] 
-                              options:NSLiteralSearch 
+
+    [theText replaceOccurrencesOfString:url
+                           withString:[NSString stringWithFormat:@"<a href=\"%@\">%@</a>", url, url]
+                              options:NSLiteralSearch
                                 range:NSMakeRange(0, theText.length)];
-    
+
     current = [NSMutableArray arrayWithArray:[detector matchesInString:theText options:0 range:NSMakeRange(0, theText.length)]];
     [current removeObjectsInRange:NSMakeRange(0, ( (i+1) * 2 ))];
   }
 
   [theText replaceOccurrencesOfString:@"\n" withString:@"<br />" options:NSLiteralSearch range:NSMakeRange(0, theText.length)];
 
-  [self.aWebView loadHTMLString:[self embedHTMLWithFontName:[self fontName] 
-                                                   size:[self fontSize] 
+  [self.aWebView loadHTMLString:[self embedHTMLWithFontName:[self fontName]
+                                                   size:[self fontSize]
                                                    text:theText]
                     baseURL:nil];
 }
@@ -134,8 +134,8 @@
 #pragma mark -
 #pragma mark embedHTML
 
-- (NSString *) embedHTMLWithFontName:(NSString *)fontName 
-                                size:(CGFloat)size 
+- (NSString *) embedHTMLWithFontName:(NSString *)fontName
+                                size:(CGFloat)size
                                 text:(NSString *)theText
 {
   NSString *embedHTML = @"\
@@ -163,8 +163,8 @@
 
 - (void) dealloc
 {
-  [_text release]; 
-  [_font release]; 
+  [_text release];
+  [_font release];
   [_aWebView release];
   [super dealloc];
 }
