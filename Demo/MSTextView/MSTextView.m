@@ -8,7 +8,7 @@
 
 #import "MSTextView.h"
 
-#define kFont [UIFont fontWithName:@"Helvetica" size:20]
+#define kMSTextViewFont [UIFont fontWithName:@"Helvetica" size:20]
 
 @interface MSTextView (PrivateMethods)
 - (NSString *) linkRegex;
@@ -39,7 +39,7 @@
     self.aWebView.delegate = self;
     [self addSubview:self.aWebView];
 
-    self.font = kFont;
+    self.font = kMSTextViewFont;
 
     for (id subview in self.aWebView.subviews)
     {
@@ -166,6 +166,7 @@
   [_text release];
   [_font release];
   [_aWebView release];
+
   [super dealloc];
 }
 
