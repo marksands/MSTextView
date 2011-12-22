@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol MSTextViewDelegate
+@protocol MSTextViewDelegate <NSObject>
 - (void)handleURL:(NSURL*)url;
 @end
 

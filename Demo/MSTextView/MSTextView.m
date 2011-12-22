@@ -82,7 +82,7 @@ static char *KVOMSTextViewFrameDidChange = "KVOMSTextViewFrameDidChange";
 {
   if( navigationType == UIWebViewNavigationTypeLinkClicked )
   {
-    if ([(NSObject*)self.delegate respondsToSelector:@selector(handleURL:)]) {
+    if ([self.delegate respondsToSelector:@selector(handleURL:)]) {
       [self.delegate handleURL:request.URL];
     }
 
