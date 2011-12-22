@@ -10,7 +10,11 @@
 
 #define kMSTextViewFont [UIFont fontWithName:@"Helvetica" size:20]
 
+static char *KVOMSTextViewTextDidChange = "KVOMSTViewTextDidChange";
+static char *KVOMSTextViewFrameDidChange = "KVOMSTextViewFrameDidChange";
+
 @interface MSTextView (PrivateMethods)
+- (void)       parseText;
 - (NSString *) linkRegex;
 - (CGFloat)    fontSize;
 - (NSString *) fontName;
@@ -29,7 +33,17 @@
 #pragma mark -
 #pragma mark MSTextView
 
-- (id) initWithFrame:(CGRect)frame
+- (id)init
+{
+  if ((self = [self initWithFrame:CGRectZero]))
+  {
+
+  }
+
+  return self;
+}
+
+- (id)initWithFrame:(CGRect)frame
 {
   if ((self = [super initWithFrame:frame]))
   {
@@ -43,16 +57,22 @@
 
     for (id subview in self.aWebView.subviews)
     {
-        // turn off scrolling in UIWebView
+      // turn off scrolling in UIWebView
       if ([[subview class] isSubclassOfClass:[UIScrollView class]]) {
         ((UIScrollView *)subview).bounces = NO;
         ((UIScrollView *)subview).scrollEnabled = NO;
       }
 
-        // make UIWebView transparent
+      // make UIWebView transparent
       if ([subview isKindOfClass:[UIImageView class]])
         ((UIImageView *)subview).hidden = YES;
-    }
+      }
+
+    /*! Using Key-Value Observing/KVO to parse text after changing it */
+    [self addObserver:self forKeyPath:@"text" options:NSKeyValueObservingOptionNew context:KVOMSTextViewTextDidChange];
+
+    /*! Using Key-Value Observing/KVO to change aWebView frame after changing MSTextView's frame */
+    [self addObserver:self forKeyPath:@"frame" options:NSKeyValueObservingOptionNew context:KVOMSTextViewFrameDidChange];
   }
 
   return self;
@@ -87,8 +107,20 @@
 }
 
 #pragma mark -
+#pragma mark KVO
 
-- (void) layoutSubviews
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+  if ([keyPath isEqualToString:@"text"])
+    [self parseText];
+  else if ([keyPath isEqualToString:@"frame"])
+    [self.aWebView setFrame:self.bounds];
+}
+
+#pragma mark -
+#pragma mark Text Parsing
+
+- (void)parseText
 {
   NSMutableString *theText = [NSMutableString stringWithString:_text];
 
@@ -166,6 +198,8 @@
   [_text release];
   [_font release];
   [_aWebView release];
+
+  [self removeObserver:self forKeyPath:@"text"];
 
   [super dealloc];
 }
