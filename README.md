@@ -1,3 +1,5 @@
+# This project is no longer supported. Sorry for any inconvenience. So long and thanks for all the fish!
+
 # MSTextView
 
 A URL aware TextView for iOS
